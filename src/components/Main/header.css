@@ -1,0 +1,8 @@
+.logo{
+    color: pink;
+    font-size: 50px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    filter:drop-shadow(1.5px 1.5px 1.5px black);
+    padding: 0 5px;
+}
