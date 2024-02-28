@@ -1,24 +1,26 @@
+@import '../../variables.css';
+
 .card {
     display: grid;
     align-items: center;
     grid-template-columns: 0.5fr repeat(5, 1fr);
     border-collapse: collapse;
     width: 100%;
-    border: 1px solid black;
+    border: var(--borderCardList);
 
     .word {
-        color: #000000;
+        color: var( --forth-color);
         font-size: 28px;
         font-weight: 700;
     }
 
     .category {
         margin: 2px;
-        color: rgb(255, 96, 122);
+        color: var(--third-color);
     }
 
     .transcription {
-        color: #000000;
+        color: var( --forth-color);
         font-size: 20px;
         font-weight: 500;
     }
@@ -30,7 +32,7 @@
         font-size: 24px;
         margin-top: 10px;
         border-radius: 10px;
-        color: rgb(255, 96, 122);
+        color: var(--third-color);
     }
 }
 
@@ -43,7 +45,7 @@
 .buttonEdit, .buttonDelete {
     padding: 5px 8px;
     border-radius: 50%;
-    background-image: linear-gradient(to top, #fff 0%, pink 0%, pink 100%);
-    color: #fff;
-    border: 1px solid rgb(255, 96, 122);
+    background-image: var(--gradient);
+    color: var(--primary-color);
+    border: var(--border);
 }

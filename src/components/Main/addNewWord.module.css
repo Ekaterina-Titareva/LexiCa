@@ -1,9 +1,10 @@
+@import '../../variables.css';
+
 .addNewWordForm {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 15px;
-    border-collapse: collapse;
     width: 100%;
     margin: 30px 0;
 }
@@ -21,8 +22,9 @@ label {
 
 input {
     width: 15vw;
-    height: 2vh;
-    border: 2px solid pink;
+    height: 3vh;
+    border: var(--borderInput);
+    text-align: center;
     border-radius: 10px;
     margin: 0 5px;
 }
@@ -32,8 +34,8 @@ input {
     height: 40px;
     margin: 10px;
     border-radius: 10px;
-    background-image: linear-gradient(to top, #fff 0%, pink 0%, pink 100%);
-    color: #fff;
-    border: 1px solid rgb(255, 96, 122);
+    background-image: var(--gradient);
+    color: var(--primary-color);
+    border: var(--border);
     font-size: 18px;
 }

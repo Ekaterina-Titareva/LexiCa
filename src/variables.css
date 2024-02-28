@@ -1,0 +1,13 @@
+:root {
+    --primary-color: white;
+    --secondary-color: pink;
+    --third-color: rgb(255, 96, 122);
+    --forth-color: black;
+    --border: 1px solid rgb(255, 96, 122);
+    --borderInput: 2px solid pink;
+    --gradient: linear-gradient(to top, #fff 0%, pink 0%, pink 100%);
+    --colorWhite: white;
+    --boxShadowCardCatalog: 2px 2px 2px 2px pink;
+    --borderCardCatalog: 2px solid #000000b3;
+    --borderCardList: 1px solid #000000b3;  
+}

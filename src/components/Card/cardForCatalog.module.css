@@ -1,23 +1,25 @@
+@import '../../variables.css';
+
 .card {
     width: 260px;
     height: 150px;
-    border: 2px solid #000000b3;
+    border: var(--borderCardCatalog);
     border-radius: 10px;
-    box-shadow: 2px 2px 2px 2px pink;
+    box-shadow: var(--boxShadowCardCatalog);
 
     .word {
-        color: #000000;
+        color: var(--forth-color);
         font-size: 30px;
         font-weight: 700;
     }
 
     .category {
         margin: 2px;
-        color: pink;
+        color: var(--secondary-color);
     }
 
     .transcription {
-        color: #000000;
+        color: var(--forth-color);
         font-size: 20px;
         font-weight: 500;
     }
@@ -29,8 +31,8 @@
         font-size: 24px;
         margin-top: 10px;
         border-radius: 10px;
-        color: pink;
-        border: 1px solid rgb(255, 96, 122);
+        color: var(--secondary-color);
+        border: var(--border);
     }
 
     .buttonTranslate {
@@ -38,9 +40,9 @@
         height: 40px;
         margin-top: 10px;
         border-radius: 10px;
-        background-image: linear-gradient(to top, #fff 0%, pink 0%, pink 100%);
-        color: #fff;
-        border: 1px solid rgb(255, 96, 122);
+        background-image: var(--gradient);
+        color: var(--primary-color);
+        border: var(--border);
         font-size: 18px;
     }
 }
@@ -57,9 +59,9 @@
     left: 10px;
     padding: 5px 8px;
     border-radius: 50%;
-    background-image: linear-gradient(to top, #fff 0%, pink 0%, pink 100%);
-    color: #fff;
-    border: 1px solid rgb(255, 96, 122);
+    background-image: var(--gradient);
+    color: var(--primary-color);
+    border: var(--border);
 }
 
 .buttonDelete{
@@ -68,7 +70,7 @@
     right: 10px;
     border-radius: 50%;
     padding: 5px 8px;
-    background-image: linear-gradient(to top, #fff 0%, pink 0%, pink 100%);
-    color: #fff;
-    border: 1px solid rgb(255, 96, 122);
+    background-image: var(--gradient);
+    color: var(--primary-color);
+    border: var(--border);
 }
