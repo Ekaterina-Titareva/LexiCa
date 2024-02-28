@@ -1,20 +1,20 @@
 import React from 'react';
-import './cardForList.css'
+import styles from './cardForList.module.css'
 
 
 
 function CardForList({id, category, word, transcription, translation}) {
 
     return (
-        <div className="card-list">
-            <div className="id-list">{id}</div>
-            <div className="category-list">{category}</div>
-            <div className="word-list">{word}</div>
-            <div className="transcription-list">{transcription}</div>
-            <div className="translation-list"> {translation} </div>
-            <div className="buttons-list">
-                <button className="button-edit-list">✎</button>
-                <button className="button-delete-list">✖</button>
+        <div className={styles.card}>
+            <div className={styles.id}>{id}</div>
+            <div className={styles.category}>{category}</div>
+            <div className={styles.word}>{word}</div>
+            <div className={styles.transcription}>{transcription}</div>
+            <div className={styles.translation}> {translation} </div>
+            <div className={styles.buttons}>
+                <button className={styles.buttonEdit}>✎</button>
+                <button className={styles.buttonDelete}>✖</button>
             </div>
         </div >
     );

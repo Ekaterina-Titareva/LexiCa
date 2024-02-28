@@ -1,4 +1,4 @@
-.card-list {
+.card {
     display: grid;
     align-items: center;
     grid-template-columns: 0.5fr repeat(5, 1fr);
@@ -6,24 +6,24 @@
     width: 100%;
     border: 1px solid black;
 
-    .word-list {
+    .word {
         color: #000000;
         font-size: 28px;
         font-weight: 700;
     }
 
-    .category-list {
+    .category {
         margin: 2px;
         color: rgb(255, 96, 122);
     }
 
-    .transcription-list {
+    .transcription {
         color: #000000;
         font-size: 20px;
         font-weight: 500;
     }
 
-    .translation-list {
+    .translation {
         width: 150px;
         height: 40px;
         margin: 0 auto;
@@ -34,13 +34,13 @@
     }
 }
 
-.buttons-list {
+.buttons {
     display: flex;
     min-width: 100px;
     align-items: center;
     gap: 10px;
 }
-.button-edit-list, .button-delete-list {
+.buttonEdit, .buttonDelete {
     padding: 5px 8px;
     border-radius: 50%;
     background-image: linear-gradient(to top, #fff 0%, pink 0%, pink 100%);

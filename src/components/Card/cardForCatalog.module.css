@@ -33,7 +33,7 @@
         border: 1px solid rgb(255, 96, 122);
     }
 
-    .button-translate {
+    .buttonTranslate {
         width: 150px;
         height: 40px;
         margin-top: 10px;
@@ -51,7 +51,7 @@
     
 }
 
-.button-edit {
+.buttonEdit {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -62,7 +62,7 @@
     border: 1px solid rgb(255, 96, 122);
 }
 
-.button-delete{
+.buttonDelete{
     position: absolute;
     top: 10px;
     right: 10px;

@@ -1,12 +1,12 @@
 import React from 'react';
 import CardForList from '../Card/CardForList';
 import { words } from '../Main/Words';
-import './listOfCards.css';
+import styles from './listOfCards.module.css';
 
 
 function ListOfCards() {
     return (
-            <div className="list">
+            <div className={styles.list}>
                 {words?.length &&
                     words.map((card) => (
                         < CardForList

@@ -1,12 +1,12 @@
 import React from 'react';
 import CardForCatalog from '../Card/CardForCatalog';
 import { words } from '../Main/Words';
-import './catalogOfCards.css';
+import styles from './catalogOfCards.module.css';
 
 
 function CatalogOfCards() {
     return (
-            <div className="catalog">
+            <div className={styles.catalog}>
                 {words?.length &&
                     words.map((card) => (
                         < CardForCatalog

@@ -1,21 +1,21 @@
 import React from 'react';
-import './cardForCatalog.css'
+import styles from './cardForCatalog.module.css'
 
 
 
 function CardForCatalog({category, word, transcription, translation}) {
 
     return (
-        <div className="card">
-            <div className="buttons">
-                <button className="button-edit">✎</button>
-                <button className="button-delete">✖</button>
+        <div className={styles.card}>
+            <div className={styles.buttons}>
+                <button className={styles.buttonEdit}>✎</button>
+                <button className={styles.buttonDelete}>✖</button>
             </div>
-            <div className="category">{category}</div>
-            <div className="word">{word}</div>
-            <div className="transcription">{transcription}</div>
-            <div className="translation"> {translation} </div>
-            <button className="button-translate">Translate</button>
+            <div className={styles.category}>{category}</div>
+            <div className={styles.word}>{word}</div>
+            <div className={styles.transcription}>{transcription}</div>
+            <div className={styles.translation}> {translation} </div>
+            <button className={styles.buttonTranslate}>Translate</button>
         </div >
     );
 }
