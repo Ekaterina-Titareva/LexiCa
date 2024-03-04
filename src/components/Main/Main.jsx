@@ -1,4 +1,4 @@
-import CatalogOfCards from "../CatalogOfCards/CatalogOfCards";
+import CardGame from "../CardGame/CardGame";
 import ListOfCards from "../ListOfCards/ListOfCards";
 import AddNewWord from "./AddNewWord";
 
@@ -8,7 +8,7 @@ function Main() {
         <div>
             < AddNewWord />
             < ListOfCards />
-            < CatalogOfCards />
+            < CardGame />
         </div>
 
     );

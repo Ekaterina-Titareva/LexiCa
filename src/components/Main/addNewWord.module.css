@@ -7,6 +7,7 @@
     gap: 15px;
     width: 100%;
     margin: 30px 0;
+    align-items: flex-end
 }
 
 .formItem {
@@ -32,7 +33,7 @@ input {
 .buttonAdd {
     width: 150px;
     height: 40px;
-    margin: 10px;
+    margin: 0 10px;
     border-radius: 10px;
     background-image: var(--gradient);
     color: var(--primary-color);

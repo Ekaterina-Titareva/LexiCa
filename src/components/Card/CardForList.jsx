@@ -14,6 +14,7 @@ function CardForList({id, category, word, transcription, translation}) {
             <div className={styles.translation}> {translation} </div>
             <div className={styles.buttons}>
                 <button className={styles.buttonEdit}>✎</button>
+                <button className={styles.buttonSave}>✔</button>
                 <button className={styles.buttonDelete}>✖</button>
             </div>
         </div >

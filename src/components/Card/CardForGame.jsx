@@ -1,16 +1,12 @@
 import React from 'react';
-import styles from './cardForCatalog.module.css'
+import styles from './cardForGame.module.css'
 
 
 
-function CardForCatalog({category, word, transcription, translation}) {
+function CardGame({category, word, transcription, translation}) {
 
     return (
         <div className={styles.card}>
-            <div className={styles.buttons}>
-                <button className={styles.buttonEdit}>✎</button>
-                <button className={styles.buttonDelete}>✖</button>
-            </div>
             <div className={styles.category}>{category}</div>
             <div className={styles.word}>{word}</div>
             <div className={styles.transcription}>{transcription}</div>
@@ -20,4 +16,4 @@ function CardForCatalog({category, word, transcription, translation}) {
     );
 }
 
-export default CardForCatalog;
+export default CardGame;

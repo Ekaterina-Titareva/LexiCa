@@ -1,0 +1,17 @@
+.catalog {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+
+.prevButton, .nextButton {
+    padding: 5px 8px;
+    margin: 0 10px;
+    border-radius: 50%;
+    background-image: var(--gradient);
+    color: var(--primary-color);
+    border: var(--border);
+}
