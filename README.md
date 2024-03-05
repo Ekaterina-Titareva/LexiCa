@@ -1,3 +1,5 @@
+Open [link to the site](https://ekaterina-titareva.github.io/LexiCa/)
+
 <img src="./src/images/lexica1.jpg" height="600"/>
 <img src="./src/images/lexica2.jpg" height="600"/>
 
