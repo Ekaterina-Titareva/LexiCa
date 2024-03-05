@@ -21,6 +21,8 @@ function CardGame() {
     };
 
     return (
+    <>
+    <h2>Here you can practice memorizing new words</h2>
     <div className={styles.catalog}>
         <button onClick={handlePreviousCard} className={styles.prevButton} disabled={currentCardIndex === 0}>◀</button>
         {words.length > 0 && (
@@ -34,6 +36,8 @@ function CardGame() {
         )}
         <button onClick={handleNextCard} className={styles.nextButton} disabled={currentCardIndex === words.length - 1}>▶</button>
     </div>
+    <h2>You have memorized {words.length} words</h2>
+    </>
     );
 }
 

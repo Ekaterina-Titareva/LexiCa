@@ -14,4 +14,18 @@
     background-image: var(--gradient);
     color: var(--primary-color);
     border: var(--border);
+    cursor: pointer;
+}
+
+.prevButton:disabled, .nextButton:disabled {
+    background-image: var(--primary-color);
+    border: var(--primary-color);
+}
+
+.prevButton:hover, .nextButton:hover {
+    filter: var(--filterDropShadow);
+}
+
+.prevButton:active, .nextButton:active {
+    color: var(--third-color);
 }

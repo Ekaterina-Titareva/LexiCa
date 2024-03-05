@@ -9,5 +9,6 @@
     --colorWhite: white;
     --boxShadowCardCatalog: 2px 2px 2px 2px pink;
     --borderCardCatalog: 2px solid #000000b3;
-    --borderCardList: 1px solid #000000b3;  
+    --borderCardList: 1px solid #000000b3; 
+    --filterDropShadow: drop-shadow(0 0 1em rgb(255, 150, 167));
 }

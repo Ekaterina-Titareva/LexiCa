@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './cardForGame.module.css'
 
 
 
-function CardGame({category, word, transcription, translation}) {
+function CardGame({ category, word, transcription, translation }) {
+    const [showTranslation, setShowTranslation] = useState(false);
 
     return (
         <div className={styles.card}>
-            <div className={styles.category}>{category}</div>
-            <div className={styles.word}>{word}</div>
-            <div className={styles.transcription}>{transcription}</div>
-            <div className={styles.translation}> {translation} </div>
-            <button className={styles.buttonTranslate}>Translate</button>
-        </div >
+        <div className={styles.category}>{category}</div>
+        <div className={styles.word}>{word}</div>
+        <div className={styles.transcription}>{transcription}</div>
+        <button className={styles.buttonTranslate} onClick={() => setShowTranslation(!showTranslation)}>
+            {showTranslation ? translation : 'Translate'}
+        </button>
+        </div>
     );
 }
 
