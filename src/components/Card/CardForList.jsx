@@ -1,30 +1,40 @@
 import React, { useState } from 'react';
 import styles from './cardForList.module.css'
 
-
-
 function CardForList({id, category, word, transcription, translation}) {
-    const [isButtonVisible, setIsButtonVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(true);
 
     const handleToggle = () => {
-        setIsButtonVisible((prev) => !prev);
+        setIsVisible((prev) => !prev);
     };
     return (
         <div className={styles.card}>
-            <div className={styles.id}>{id}</div>
-            <div className={styles.category}>{category}</div>
-            <div className={styles.word}>{word}</div>
-            <div className={styles.transcription}>{transcription}</div>
-            <div className={styles.translation}> {translation} </div>
-            <div className={styles.buttons}>
-            { isButtonVisible ? (
-                <button className={styles.buttonEdit} onClick={handleToggle}>✎</button>
+            { isVisible ? (
+                <>
+                    <div className={styles.id}>{id}</div>
+                    <div className={styles.category}>{category}</div>
+                    <div className={styles.word}>{word}</div>
+                    <div className={styles.transcription}>{transcription}</div>
+                    <div className={styles.translation}> {translation} </div>
+                    <div className={styles.buttons}>
+                        <button className={styles.buttonEdit} onClick={handleToggle}>✎</button>
+                        <button className={styles.buttonDelete}>⌫</button>
+                    </div>
+                </>
             ) : (
-                <button className={styles.buttonSave} onClick={handleToggle}>✔</button>
-                
+                <>
+                    <p>{id}</p>
+                    <input type="text" placeholder={category}></input>
+                    <input type="text" placeholder={word}></input>
+                    <input type="text" placeholder={transcription}></input>
+                    <input type="text" placeholder={translation}></input>
+                    <div className={styles.buttons}>
+                        <button className={styles.buttonSave} onClick={handleToggle}>✔</button>
+                        <button className={styles.buttonCancel}>✖</button>
+                    </div>
+                </>
             )}
-                <button className={styles.buttonDelete}>✖</button>
-            </div>
+                
         </div >
     );
 }

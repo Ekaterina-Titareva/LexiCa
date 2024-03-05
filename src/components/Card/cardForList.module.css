@@ -42,7 +42,7 @@
     align-items: center;
     gap: 10px;
 }
-.buttonEdit, .buttonDelete, .buttonSave {
+.buttonEdit, .buttonDelete, .buttonSave, .buttonCancel {
     padding: 5px 8px;
     border-radius: 50%;
     background-image: var(--gradient);
@@ -51,10 +51,14 @@
     cursor: pointer;
 }
 
-.buttonEdit:hover, .buttonDelete:hover, .buttonSave:hover {
+.buttonDelete {
+    padding: 5px 5px;
+}
+
+.buttonEdit:hover, .buttonDelete:hover, .buttonSave:active, .buttonCancel:active {
     filter: var(--filterDropShadow);
 }
 
-.buttonEdit:active, .buttonDelete:active, .buttonSave:active {
+.buttonEdit:active, .buttonDelete:active, .buttonSave:active, .buttonCancel:active {
     color: var(--third-color);
 }
