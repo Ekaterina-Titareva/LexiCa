@@ -29,8 +29,8 @@ function CardForList({id, category, word, transcription, translation}) {
                     <input type="text" placeholder={transcription}></input>
                     <input type="text" placeholder={translation}></input>
                     <div className={styles.buttons}>
-                        <button className={styles.buttonSave} onClick={handleToggle}>✔</button>
-                        <button className={styles.buttonCancel}>✖</button>
+                        <button className={styles.buttonSave}>✔</button>
+                        <button className={styles.buttonCancel} onClick={handleToggle}>✖</button>
                     </div>
                 </>
             )}
