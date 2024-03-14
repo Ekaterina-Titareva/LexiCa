@@ -1,9 +1,11 @@
+import styles from "./input.module.css"
+
 const Input = ({ className, title, id, placeholder, name }) => (
     <div className={className}>
-    <label htmlFor={id} title={title}>
+    <label className={styles.label} htmlFor={id} title={title}>
         {name}
     </label>
-    <input type="text" id={id} placeholder={placeholder}></input>
+    <input className={styles.input} type="text" id={id} placeholder={placeholder}></input>
     </div>
 );
 

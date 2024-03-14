@@ -15,26 +15,6 @@ display: flex;
 flex-direction: column;
 }
 
-label {
-    font-size: 20px;
-    margin: 0 5px;
-    font-weight: 600;
-}
-
-input {
-    width: 15vw;
-    height: 3vh;
-    border: var(--borderInput);
-    text-align: center;
-    border-radius: 10px;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-input:hover {
-    filter: var(--filterDropShadow);
-}
-
 .buttonAdd {
     width: 150px;
     height: 40px;

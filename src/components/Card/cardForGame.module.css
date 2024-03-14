@@ -6,6 +6,7 @@
     border: var(--borderCardCatalog);
     border-radius: 10px;
     box-shadow: var(--boxShadowCardCatalog);
+    margin: 0 10px;
 
     .word {
         color: var(--forth-color);

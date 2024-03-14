@@ -49,6 +49,7 @@
     color: var(--primary-color);
     border: var(--border);
     cursor: pointer;
+    margin: 0 3px;
 }
 
 .buttonDelete {
@@ -61,4 +62,19 @@
 
 .buttonEdit:active, .buttonDelete:active, .buttonSave:active, .buttonCancel:active {
     color: var(--third-color);
+}
+
+.input {
+    padding: 0;
+    margin: 0;
+    padding-block: 0;
+    padding-inline:0;
+    border: var(--borderInput);
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.input:hover {
+    filter: var(--filterDropShadow);
 }
