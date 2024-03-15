@@ -5,7 +5,6 @@ import styles from "./addNewWord.module.css"
 function AddNewWord() {
     return (
         <div className={styles.addNewWordForm}>
-            <p className={styles.id}>ID</p>
             {fields.map((field) => (
             <Input
                 className={styles.formItem}

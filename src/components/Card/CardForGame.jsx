@@ -7,6 +7,7 @@ function CardGame({ category, word, transcription, translation }) {
     const [showTranslation, setShowTranslation] = useState(false);
 
     return (
+
         <div className={styles.card}>
         <div className={styles.category}>{category}</div>
         <div className={styles.word}>{word}</div>
