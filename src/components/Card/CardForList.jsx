@@ -24,41 +24,43 @@ function CardForList({id, sx, category, word, transcription, translation}) {
                         <TableCell>{word}</TableCell>
                         <TableCell>{transcription}</TableCell>
                         <TableCell>{translation}</TableCell>
-                        <div className={styles.buttons}>
+                        <td className={styles.buttons}>
                             <Fab className={styles.buttonEdit} title="edit" color="error" size="small" aria-label="edit" onClick={handleToggle}>
                                 <EditIcon />
                             </Fab>
                             <Fab className={styles.buttonDelete} title="delete" color="error" size="small" aria-label="delete">
                                 <DeleteIcon />
                             </Fab>
-                        </div>
+                        </td>
                     </TableRow>
                 </>
             ) : (
                 <>
-                    <TableCell>
-                        <p>{id}</p>
-                    </TableCell>
-                    <TableCell>
-                        <input className={styles.input} type="text" placeholder={category}></input>
-                    </TableCell>
-                    <TableCell>
-                        <input className={styles.input} type="text" placeholder={word}></input>
-                    </TableCell>
-                    <TableCell>
-                        <input className={styles.input} type="text" placeholder={transcription}></input>
-                    </TableCell>
-                    <TableCell>
-                        <input className={styles.input} type="text" placeholder={translation}></input>
-                    </TableCell>
-                    <div className={styles.buttons}>
-                        <Fab className={styles.buttonSave} title="save" color="error" size="small" aria-label="save">
-                            <CheckIcon />
-                        </Fab>
-                        <Fab  className={styles.buttonCancel} onClick={handleToggle} title="cancel" color="error" size="small" aria-label="cancel">
-                            < CloseIcon />
-                        </Fab>
-                    </div>
+                    <TableRow key={id} sx={sx}>
+                        <TableCell>
+                            <p>{id}</p>
+                        </TableCell>
+                        <TableCell>
+                            <input className={styles.input} type="text" placeholder={category}></input>
+                        </TableCell>
+                        <TableCell>
+                            <input className={styles.input} type="text" placeholder={word}></input>
+                        </TableCell>
+                        <TableCell>
+                            <input className={styles.input} type="text" placeholder={transcription}></input>
+                        </TableCell>
+                        <TableCell>
+                            <input className={styles.input} type="text" placeholder={translation}></input>
+                        </TableCell>
+                        <td className={styles.buttons}>
+                            <Fab className={styles.buttonSave} title="save" color="error" size="small" aria-label="save">
+                                <CheckIcon />
+                            </Fab>
+                            <Fab  className={styles.buttonCancel} onClick={handleToggle} title="cancel" color="error" size="small" aria-label="cancel">
+                                < CloseIcon />
+                            </Fab>
+                        </td>
+                    </TableRow>
                 </>
             )}
         </>

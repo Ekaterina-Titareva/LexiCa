@@ -1,8 +1,5 @@
 Open [link to the site](https://ekaterina-titareva.github.io/LexiCa/)
 
-<img src="./src/images/lexica1.jpg" height="600"/>
-<img src="./src/images/lexica2.jpg" height="600"/>
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

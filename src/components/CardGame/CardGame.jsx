@@ -6,6 +6,16 @@ import Fab from '@mui/material/Fab';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
+
 function CardGame() {
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
@@ -24,6 +34,8 @@ function CardGame() {
     <>
     <h2>Here you can practice memorizing new words</h2>
     <div className={styles.catalog}>
+
+        
         <Fab 
             className={styles.prevButton}
             onClick={handlePreviousCard}
@@ -34,15 +46,31 @@ function CardGame() {
             aria-label="previous">
                 <ArrowBackIosIcon />
         </Fab>
-            {words.length > 0 && (
-                    <CardForGame
-                    key={words[currentCardIndex].id}
-                    category={words[currentCardIndex].tags}
-                    word={words[currentCardIndex].english}
-                    transcription={words[currentCardIndex].transcription}
-                    translation={words[currentCardIndex].russian}
-                    />
-            )}
+
+
+        <Swiper
+            pagination={{
+                type: 'fraction',
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+        >
+                    {words.length > 0 && (
+                        <SwiperSlide>
+                            <CardForGame
+                            key={words[currentCardIndex].id}
+                            category={words[currentCardIndex].tags}
+                            word={words[currentCardIndex].english}
+                            transcription={words[currentCardIndex].transcription}
+                            translation={words[currentCardIndex].russian}
+                            />
+                        </SwiperSlide>
+                    )}
+        </Swiper>
+
+
+
         <Fab 
             className={styles.nextButton}
             onClick={handleNextCard}
@@ -53,6 +81,9 @@ function CardGame() {
             aria-label="next">
                 <ArrowForwardIosIcon />
         </Fab>
+
+
+
     </div>
     <h2>You have memorized {words.length} words</h2>
     </>
