@@ -5,3 +5,14 @@ body {
   font-family: var(--font);
   font-weight: 500;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 50px;
+  text-align: center;
+  gap: 30px;
+  min-height: 100vh;
+  min-width: 320px;
+}

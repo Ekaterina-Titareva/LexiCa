@@ -1,0 +1,23 @@
+.swiper-button-prev,
+.swiper-button-next {
+    color: red;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.swiper-pagination-fraction {
+    padding-top: 20px;
+}

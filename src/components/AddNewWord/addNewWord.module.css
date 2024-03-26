@@ -1,5 +1,3 @@
-@import '../../variables.css';
-
 .addNewWordForm {
     display: flex;
     flex-direction: row;
@@ -40,4 +38,24 @@ flex-direction: column;
     margin: 0 4.5% 0 0;
     font-size: 20px;
     font-weight: 600;
+}
+
+.label {
+    font-size: 20px;
+    margin: 0 5px;
+    font-weight: 600;
+}
+
+.input {
+    width: 15vw;
+    height: 3vh;
+    border: var(--borderInput);
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.input:hover {
+    filter: var(--filterDropShadow);
 }
