@@ -1,6 +1,6 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { words } from "../../ListOfCards/Words";
+import { words } from "../../../API/words";
 import CardForGame from "./CardForGame";
 
 // Import Swiper styles

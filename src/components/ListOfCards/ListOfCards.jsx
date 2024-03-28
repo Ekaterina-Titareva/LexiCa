@@ -1,6 +1,6 @@
 import React from 'react';
 import CardForList from './CardForList/CardForList.jsx';
-import { words } from './Words.jsx';
+import { words } from '../../API/words.js';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
