@@ -1,4 +1,4 @@
-import { Button, Result } from 'antd'
+import { Result } from 'antd'
 
 const Error404 = () => (
     <Result
