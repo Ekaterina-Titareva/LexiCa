@@ -40,6 +40,7 @@
     align-items: center;
     gap: 10px;
 }
+
 .buttonEdit, .buttonDelete, .buttonSave, .buttonCancel {
     padding: 5px 8px;
     border-radius: 50%;
@@ -67,6 +68,7 @@
     margin: 0;
     padding-block: 0;
     padding-inline:0;
+    background-color: transparent;
     border: var(--borderInput);
     text-align: center;
     border-radius: 10px;

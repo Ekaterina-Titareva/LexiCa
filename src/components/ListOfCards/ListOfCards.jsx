@@ -12,8 +12,8 @@ import Paper from '@mui/material/Paper';
 function ListOfCards() {
     return (
         <>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableContainer component={Paper} sx={{backgroundColor: "#ffffff40"}}>
+                <Table sx={{ minWidth: 650}} aria-label="simple table">
                     <TableHead>
                         <TableRow>
                         <TableCell>id</TableCell>

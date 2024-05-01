@@ -12,13 +12,17 @@ function App() {
 		< Header />
 		<Routes>
 				<Route path='/LexiCa' element={
-          <>
+          <main>
           < AddNewWord />
           < ListOfCards />
-          </>
+          </main>
         }/>
-        <Route path='/LexiCa/game' element={< CardGame />}/>
-        <Route path='*' element={< Error404 />}/>
+        <Route path='/LexiCa/game' element={
+          <main>< CardGame /></main>
+        }/>
+        <Route path='*' element={
+          <main>< Error404 /></main>}
+        />
       </Routes>
 		< Footer />
 	</Router>
