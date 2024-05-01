@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/LexiCa/static/css/main.663342e3.css",
-    "main.js": "/LexiCa/static/js/main.6c52a088.js",
+    "main.css": "/LexiCa/static/css/main.8c2a6b35.css",
+    "main.js": "/LexiCa/static/js/main.b3c6d711.js",
     "static/media/roboto-latin-500-normal.woff2": "/LexiCa/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "/LexiCa/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
     "static/media/roboto-latin-400-normal.woff2": "/LexiCa/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
@@ -50,6 +50,7 @@
     "static/media/roboto-vietnamese-400-normal.woff": "/LexiCa/static/media/roboto-vietnamese-400-normal.e0e8ba725ebd107367a8.woff",
     "static/media/roboto-vietnamese-500-normal.woff": "/LexiCa/static/media/roboto-vietnamese-500-normal.657896dad292ee9a0a0a.woff",
     "static/media/roboto-vietnamese-700-normal.woff": "/LexiCa/static/media/roboto-vietnamese-700-normal.4df79f684fcbca8386bd.woff",
+    "static/media/leaf.svg": "/LexiCa/static/media/leaf.c69480e82e77e1581a9a0e279049e453.svg",
     "static/media/roboto-greek-ext-500-normal.woff2": "/LexiCa/static/media/roboto-greek-ext-500-normal.6fb9cffb1d3e72bf9293.woff2",
     "static/media/roboto-greek-ext-400-normal.woff2": "/LexiCa/static/media/roboto-greek-ext-400-normal.169619821ea93019d1bb.woff2",
     "static/media/roboto-greek-ext-300-normal.woff2": "/LexiCa/static/media/roboto-greek-ext-300-normal.35b9d6be04b95f0f0530.woff2",
@@ -59,11 +60,11 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/LexiCa/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "/LexiCa/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/LexiCa/index.html",
-    "main.663342e3.css.map": "/LexiCa/static/css/main.663342e3.css.map",
-    "main.6c52a088.js.map": "/LexiCa/static/js/main.6c52a088.js.map"
+    "main.8c2a6b35.css.map": "/LexiCa/static/css/main.8c2a6b35.css.map",
+    "main.b3c6d711.js.map": "/LexiCa/static/js/main.b3c6d711.js.map"
   },
   "entrypoints": [
-    "static/css/main.663342e3.css",
-    "static/js/main.6c52a088.js"
+    "static/css/main.8c2a6b35.css",
+    "static/js/main.b3c6d711.js"
   ]
 }
