@@ -62,3 +62,10 @@ flex-direction: column;
 .input:hover {
     filter: var(--filterDropShadow);
 }
+
+@media screen and (max-width: 768px) {
+    .addNewWordForm {
+        flex-direction: column;
+        align-items: center;
+    }
+}
