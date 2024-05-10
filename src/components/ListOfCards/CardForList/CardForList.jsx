@@ -3,8 +3,6 @@ import styles from './cardForList.module.css'
 import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import TableCell from '@mui/material/TableCell';
-import TableRow from '@mui/material/TableRow';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -18,12 +16,12 @@ function CardForList({id, sx, category, word, transcription, translation}) {
         <>
             { isVisible ? (
                 <>
-                    <TableRow key={id} sx={sx}>
-                        <TableCell>{id}</TableCell>
-                        <TableCell>{category}</TableCell>
-                        <TableCell>{word}</TableCell>
-                        <TableCell>{transcription}</TableCell>
-                        <TableCell>{translation}</TableCell>
+                    <tr>
+                        <td>{id}</td>
+                        <td>{category}</td>
+                        <td>{word}</td>
+                        <td>{transcription}</td>
+                        <td>{translation}</td>
                         <td className={styles.buttons}>
                             <Fab className={styles.buttonEdit} title="edit" color="error" size="small" aria-label="edit" onClick={handleToggle}>
                                 <EditIcon />
@@ -32,26 +30,16 @@ function CardForList({id, sx, category, word, transcription, translation}) {
                                 <DeleteIcon />
                             </Fab>
                         </td>
-                    </TableRow>
+                    </tr>
                 </>
             ) : (
                 <>
-                    <TableRow key={id} sx={sx}>
-                        <TableCell>
-                            <p>{id}</p>
-                        </TableCell>
-                        <TableCell>
-                            <input className={styles.input} type="text" placeholder={category}></input>
-                        </TableCell>
-                        <TableCell>
-                            <input className={styles.input} type="text" placeholder={word}></input>
-                        </TableCell>
-                        <TableCell>
-                            <input className={styles.input} type="text" placeholder={transcription}></input>
-                        </TableCell>
-                        <TableCell>
-                            <input className={styles.input} type="text" placeholder={translation}></input>
-                        </TableCell>
+                    <tr>
+                            <td>{id}</td>
+                            <td><input className={styles.input} type="text" placeholder={category}></input></td>
+                            <td><input className={styles.input} type="text" placeholder={word}></input></td>
+                            <td><input className={styles.input} type="text" placeholder={transcription}></input></td>
+                            <td><input className={styles.input} type="text" placeholder={translation}></input></td>
                         <td className={styles.buttons}>
                             <Fab className={styles.buttonSave} title="save" color="error" size="small" aria-label="save">
                                 <CheckIcon />
@@ -60,7 +48,7 @@ function CardForList({id, sx, category, word, transcription, translation}) {
                                 < CloseIcon />
                             </Fab>
                         </td>
-                    </TableRow>
+                    </tr>
                 </>
             )}
         </>

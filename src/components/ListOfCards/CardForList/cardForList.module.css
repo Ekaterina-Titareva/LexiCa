@@ -38,6 +38,7 @@
     display: flex;
     min-width: 100px;
     align-items: center;
+    justify-content: space-around;
     gap: 10px;
 }
 
@@ -55,13 +56,13 @@
     padding: 5px 5px;
 }
 
-.buttonEdit:hover, .buttonDelete:hover, .buttonSave:active, .buttonCancel:active {
+/* .buttonEdit:hover, .buttonDelete:hover, .buttonSave:active, .buttonCancel:active {
     filter: var(--filterDropShadow);
 }
 
 .buttonEdit:active, .buttonDelete:active, .buttonSave:active, .buttonCancel:active {
     color: var(--third-color);
-}
+} */
 
 .input {
     padding: 0;
@@ -76,5 +77,13 @@
 }
 
 .input:hover {
-    filter: var(--filterDropShadow);
+    background-color:  rgba(255, 0, 43, 0.417);
+}
+
+@media screen and (max-width: 860px) {
+    .buttons {
+        justify-content: center;
+        gap: 20px;
+    }
+    
 }

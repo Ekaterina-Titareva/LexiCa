@@ -34,8 +34,54 @@ main {
   margin: 0 100px;
 }
 
-@media screen and (max-width: 768px) {
+table {
+  background-color: #ffffff40;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-spacing: 5px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr {
+  border-bottom: 1px solid #ccc;
+}
+
+tr:hover {
+  background-color: #ffffff40;
+}
+
+td {
+  padding: 10px;
+}
+
+@media screen and (max-width: 1150px) {
+  main {
+    margin: 0 10px;
+  }
+  td {
+    padding: 2px;
+  }
+}
+@media screen and (max-width: 860px) {
   #root {
-    padding-top: 140px;
+    padding-top: 220px;
+  }
+
+  main {
+    margin: 0 50px;
+  }
+
+  tr {
+    display: block;
+    border: none;
+  }
+
+  td {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    padding: 10px;
   }
 }

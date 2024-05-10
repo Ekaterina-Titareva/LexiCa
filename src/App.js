@@ -13,8 +13,12 @@ function App() {
 		<Routes>
 				<Route path='/LexiCa' element={
           <main>
-          < AddNewWord />
-          < ListOfCards />
+            <form>
+            <table>
+                < AddNewWord />
+                < ListOfCards />
+            </table>
+            </form>
           </main>
         }/>
         <Route path='/LexiCa/game' element={

@@ -1,4 +1,3 @@
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { words } from "../../../API/words";
 import CardForGame from "./CardForGame";
@@ -21,6 +20,7 @@ export default function SwiperForCardForGame({ incrementLearnedCount }) {
                 className="mySwiper"
             >
                 {words.map((item) => {
+                    
                 return (
                     <SwiperSlide key={item.id}>
                         <CardForGame
@@ -35,7 +35,6 @@ export default function SwiperForCardForGame({ incrementLearnedCount }) {
                     </SwiperSlide>
                     
                 );
-                
                 })}
             </Swiper>
         </>

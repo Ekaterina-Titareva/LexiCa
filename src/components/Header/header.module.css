@@ -75,6 +75,12 @@ ul {
     color: var(--third-color);
 }
 
+@media screen and (max-width: 1150px) {
+    ul {
+        gap: 0;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .header {
         flex-direction: column;
@@ -82,7 +88,7 @@ ul {
         }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
     .header {
         flex-direction: column;
         justify-content: center

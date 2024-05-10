@@ -17,15 +17,35 @@ function AddNewWord() {
     };
     
     return (
-        <div className={styles.addNewWordForm}>
+        <thead>
+        <tr>
+            <td>
+                <p 
+                    className={styles.label}>
+                    Id
+                </p>
+            </td>
             {fields.map((field) => (
-                <div key={field.id} className={field.className}>
-                    <label className={styles.label} htmlFor={field.id} title={field.title}>{field.name}</label>
-                    <input className={styles.input} type="text" id={field.id} placeholder={field.placeholder} onChange={(e) => handleInputChange(e, field.id)}></input>
-                </div>
+                <td key={field.id} className={field.className}>
+                    <p className={styles.label} htmlFor={field.id} title={field.title}>{field.name}</p>
+                    <input 
+                        className={styles.input} 
+                        type="text" 
+                        id={field.id} 
+                        placeholder={field.placeholder} 
+                        onChange={(e) => handleInputChange(e, field.id)}>
+                    </input>
+                </td>
             ))}
-        <button className={styles.buttonAdd} onClick={handleAddButtonClick}>Add</button>
-        </div>
+        <td>
+            <button 
+                className={styles.buttonAdd}
+                onClick={handleAddButtonClick}>
+                    Add
+            </button>
+        </td>
+        </tr>
+        </thead>
     );
 }
     

@@ -3,7 +3,7 @@ import styles from './cardForGame.module.css'
 
 
 
-function CardGame({ category, word, transcription, translation, incrementLearnedCount }) {
+function CardGame({ category, word, transcription, translation, incrementLearnedCount}) {
     const [showTranslation, setShowTranslation] = useState(false);
     const [counted, setCounted] = useState(false);
     const handleClick = () => {
