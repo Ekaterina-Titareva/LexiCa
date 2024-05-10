@@ -1,42 +1,56 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { forwardRef, useState } from 'react';
+import styles from "./swiperForCardForGame.module.css"
 import { words } from "../../../API/words";
 import CardForGame from "./CardForGame";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "./swiperForCardForGame.css";
-import { Pagination, Navigation } from "swiper/modules";
+import arrowLeft from "../../../assets/icons/arrow-left.svg"
+import arrowRight from "../../../assets/icons/arrow-right.svg"
 
-export default function SwiperForCardForGame({ incrementLearnedCount }) {
-    
+const SwiperForCardForGame = forwardRef((props, ref) => {
+    const [isShownTranslations, setIsShownTranslations]= useState([])
+    const handlePrevClick = () => {
+        if (props.currentIndex > 0) {
+            props.setCurrentIndex(props.currentIndex - 1);
+            
+        } else return
+        }
+    const handleNextClick = () => {
+    if (props.currentIndex < (words.length - 1)) {
+        props.setCurrentIndex(props.currentIndex + 1);
+
+        
+    } else if (props.currentIndex === (words.length - 1)) 
+        {props.handleSetGame()}
+    }
+        
     return (
-        <>
-            <Swiper
-                pagination={{
-                type: "fraction",
-                }}
-                navigation={true}
-                modules={[Pagination, Navigation]}
-                className="mySwiper"
-            >
-                {words.map((item) => {
-                    
-                return (
-                    <SwiperSlide key={item.id}>
+        <div className={styles.swiper}>
+            <button 
+            onClick={handlePrevClick}
+            disabled={props.currentIndex === 0}
+            className={styles.button}>
+            <img src={arrowLeft} alt="arrow" />
+            </button>
                         <CardForGame
-                        key={item.id}
-                        category={item.tags}
-                        word={item.english}
-                        transcription={item.transcription}
-                        translation={item.russian}
-                        incrementLearnedCount={incrementLearnedCount}
+                        key={words[props.currentIndex].id}
+                        id={words[props.currentIndex].id}
+                        category={words[props.currentIndex].tags}
+                        word={words[props.currentIndex].english}
+                        transcription={words[props.currentIndex].transcription}
+                        translation={words[props.currentIndex].russian}
+                        incrementLearnedCount={props.incrementLearnedCount}
+                        currentIndex={props.currentIndex}
+                        isShownTranslations={isShownTranslations}
+                        setIsShownTranslations={setIsShownTranslations}
+                        ref={ref}
                         />
-                        
-                    </SwiperSlide>
-                    
-                );
-                })}
-            </Swiper>
-        </>
-    );
-}
+            <button 
+            onClick={handleNextClick}
+            disabled={props.currentIndex === (words.length - 1)}
+            className={styles.button}>
+            <img src={arrowRight} alt="arrow" />
+            </button>
+        </div>
+    )
+})
+
+export default SwiperForCardForGame;

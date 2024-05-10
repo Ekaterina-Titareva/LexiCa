@@ -1,0 +1,16 @@
+
+.swiper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+.button {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 10px;
+}
+.button:hover {
+    filter: var(--filterDropShadow);
+}

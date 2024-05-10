@@ -38,11 +38,12 @@ function AddNewWord() {
                 </td>
             ))}
         <td>
-            <button 
+            <input
+            type='submit'
+            value='Add'
                 className={styles.buttonAdd}
                 onClick={handleAddButtonClick}>
-                    Add
-            </button>
+            </input>
         </td>
         </tr>
         </thead>
