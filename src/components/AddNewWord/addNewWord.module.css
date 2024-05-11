@@ -26,7 +26,6 @@
 }
 
 .input {
-    border: var(--borderInput);
     text-align: center;
     border-radius: 10px;
     padding: 5px;
@@ -38,9 +37,30 @@ input::placeholder {
 }
 
 .input:hover {
-    background-color:  rgba(255, 0, 43, 0.417);
+    background-color:  rgba(255, 255, 255, 0.417);
     
 }
+
+.error {
+    border: 1px solid red;
+}
+
+.errorMsg {
+    color: #000000;
+    font-size: smaller;
+    font-weight: 300;
+}
+
+.buttonAdd:disabled,
+.buttonAdd:disabled:hover,
+.buttonAdd:disabled:active {
+    background-color: #ccc;
+    color: rgb(97, 97, 97);
+    border-color: #ccc;
+    cursor: unset;
+    filter: unset;
+}
+
 
 @media screen and (max-width: 1150px) {
     .input{
@@ -51,6 +71,8 @@ input::placeholder {
     }
 }
 
+
+
 @media screen and (max-width: 860px) {
     .input{
     padding: 5px;
@@ -59,3 +81,4 @@ input::placeholder {
         width: 150px;
     }
 }
+

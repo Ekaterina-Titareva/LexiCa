@@ -36,8 +36,6 @@ main {
 
 table {
   background-color: #ffffff40;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
   border-spacing: 5px;
   border-collapse: collapse;
   width: 100%;
@@ -85,3 +83,4 @@ td {
     padding: 10px;
   }
 }
+

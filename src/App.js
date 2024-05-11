@@ -5,6 +5,7 @@ import AddNewWord from "./components/AddNewWord/AddNewWord.jsx";
 import CardGame from "./components/CardGame/CardGame.jsx";
 import Footer from "./components/Footer/Footer.jsx"
 import Error404 from './components/Error404/Error404.jsx';
+import TestForm from './components/TestForm/TestForm.jsx';
 
 function App() {
   return (
@@ -13,12 +14,8 @@ function App() {
 		<Routes>
 				<Route path='/LexiCa' element={
           <main>
-            <form>
-            <table>
-                < AddNewWord />
-                < ListOfCards />
-            </table>
-            </form>
+                  < AddNewWord />
+                  < ListOfCards />
           </main>
         }/>
         <Route path='/LexiCa/game' element={
@@ -26,6 +23,9 @@ function App() {
         }/>
         <Route path='*' element={
           <main>< Error404 /></main>}
+        />
+        <Route path='/LexiCa/testForm' element={
+          <main><TestForm /></main>}
         />
       </Routes>
 		< Footer />

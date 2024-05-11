@@ -1,6 +1,6 @@
 import styles from './footer.module.css'
 import React from 'react';
-import { Button, Form, Input, InputNumber } from 'antd';
+import { Button, Form, Input} from 'antd';
 
 function Footer() {
 const layout = {
@@ -67,7 +67,7 @@ const onFinish = (values) => {
                     >
                     <Input style={{backgroundColor: "transparent"}}/>
                     </Form.Item>
-                    <Form.Item name={['user', 'introduction']} label="Problem">
+                    <Form.Item name={['user', 'problem']} label="Problem">
                     <Input.TextArea  style={{backgroundColor: "transparent"}} />
                     </Form.Item>
                     <Form.Item

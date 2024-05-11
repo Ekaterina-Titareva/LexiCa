@@ -41,11 +41,11 @@
     }
 
     .buttonTranslate:hover {
-        filter: var(--filterDropShadow);
-    }
-
-    .buttonTranslate:active {
         color: var(--third-color);
     }
+
+    .buttonTranslate:focus {
+            filter: var(--filterDropShadow);
+        }
 
 }

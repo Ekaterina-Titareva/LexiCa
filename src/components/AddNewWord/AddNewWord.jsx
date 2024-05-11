@@ -3,51 +3,106 @@ import styles from "./addNewWord.module.css"
 import { fields } from '../../store/fields.js';
 
 function AddNewWord() {
-    const [inputValues, setInputValues] = useState({});
+    const [inputValues, setInputValues] = useState(
+        fields.reduce((values, field) => ({ ...values, [field.id]: '' }), {})
+    );
+    const [touchedFields, setTouchedFields] = useState({});
+    const [errors, setErrors] = useState({});
+
+    const validateField = (id, value) => {
+        let regex;
+        switch(id) {
+            case 'Category':
+            case 'Word':
+                regex = /^[A-Z]+$/i;
+                if (!regex.test(value)) {
+                    return "Enter an english word";
+                }
+                break;
+            case 'Translation':
+                regex = /^[А-ЯЁ]+$/i;
+                if (!regex.test(value)) {
+                    return "Enter a russian word";
+                }
+                break;
+            default:
+                return '';
+        }
+        return '';
+    };
 
     const handleInputChange = (e, id) => {
+        const value = e.target.value;
         setInputValues({
             ...inputValues,
-            [id]: e.target.value
+            [id]: value
+        });
+        setTouchedFields({
+            ...touchedFields,
+            [id]: true
+        });
+        const errorMessage = validateField(id, value);
+        setErrors({
+            ...errors,
+            [id]: errorMessage
         });
     };
-    const handleAddButtonClick = () => {
-    console.log('Input values:', inputValues);
-    
+
+    const hasEmptyValue = Object.values(inputValues).some(value => value.trim() === "");
+    const hasErrors = Object.values(errors).some(error => error !== '');
+
+    // Функция для определения класса стиля поля ввода
+    const inputClassName = (id) => {
+        return `${styles.input} ${(touchedFields[id] && inputValues[id].trim() === '') || errors[id] ? styles.error : ''}`;
     };
+
+    const handleAddButtonClick = (e) => {
+        e.preventDefault();
+        if (!hasEmptyValue && !hasErrors) {
+            console.log('Input values:', inputValues);
     
+            // Очистка полей формы
+            setInputValues(fields.reduce((values, field) => ({ ...values, [field.id]: '' }), {}));
+            setTouchedFields({});
+            setErrors({});
+        }
+    };
+
     return (
-        <thead>
-        <tr>
-            <td>
-                <p 
-                    className={styles.label}>
-                    Id
-                </p>
-            </td>
-            {fields.map((field) => (
-                <td key={field.id} className={field.className}>
-                    <p className={styles.label} htmlFor={field.id} title={field.title}>{field.name}</p>
-                    <input 
-                        className={styles.input} 
-                        type="text" 
-                        id={field.id} 
-                        placeholder={field.placeholder} 
-                        onChange={(e) => handleInputChange(e, field.id)}>
-                    </input>
-                </td>
-            ))}
-        <td>
-            <input
-            type='submit'
-            value='Add'
-                className={styles.buttonAdd}
-                onClick={handleAddButtonClick}>
-            </input>
-        </td>
-        </tr>
-        </thead>
+        <form onSubmit={handleAddButtonClick}>
+            <table>
+                <thead>
+                    <tr>
+                        <td>
+                            <p className={styles.label}>Id</p>
+                        </td>
+                        {fields.map((field) => (
+                            <td key={field.id} className={field.className}>
+                                <p className={styles.label} htmlFor={field.id} title={field.title}>{field.name}</p>
+                                <input 
+                                    className={inputClassName(field.id)} 
+                                    type="text" 
+                                    id={field.id} 
+                                    placeholder={field.placeholder} 
+                                    value={inputValues[field.id]} 
+                                    onChange={(e) => handleInputChange(e, field.id)}
+                                    onBlur={() => setTouchedFields({ ...touchedFields, [field.id]: true })}
+                                />
+                                {errors[field.id] && <div className={styles.errorMsg}>{errors[field.id]}</div>}
+                            </td>
+                        ))}
+                        <td>
+                            <button
+                                disabled={hasEmptyValue || hasErrors}
+                                type='submit'
+                                className={styles.buttonAdd}
+                            >Add</button>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </form>
     );
 }
-    
-    export default AddNewWord;
+
+export default AddNewWord;
