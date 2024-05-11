@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/LexiCa/static/css/main.1afffe87.css",
-    "main.js": "/LexiCa/static/js/main.4e462ee2.js",
+    "main.js": "/LexiCa/static/js/main.218f1868.js",
     "static/media/roboto-latin-500-normal.woff2": "/LexiCa/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "/LexiCa/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
     "static/media/roboto-latin-400-normal.woff2": "/LexiCa/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
@@ -63,10 +63,10 @@
     "static/media/arrow-left.svg": "/LexiCa/static/media/arrow-left.4d6efaeadc3d4027f37643f2599c2e40.svg",
     "static/media/arrow-right.svg": "/LexiCa/static/media/arrow-right.523815fa179f0579c7d86a9aeb666f91.svg",
     "main.1afffe87.css.map": "/LexiCa/static/css/main.1afffe87.css.map",
-    "main.4e462ee2.js.map": "/LexiCa/static/js/main.4e462ee2.js.map"
+    "main.218f1868.js.map": "/LexiCa/static/js/main.218f1868.js.map"
   },
   "entrypoints": [
     "static/css/main.1afffe87.css",
-    "static/js/main.4e462ee2.js"
+    "static/js/main.218f1868.js"
   ]
 }
