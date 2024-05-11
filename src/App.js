@@ -24,10 +24,8 @@ function App() {
         <Route path='*' element={
           <main>< Error404 /></main>}
         />
-        <Route path='/LexiCa/testForm' element={
-          <main><TestForm /></main>}
-        />
       </Routes>
+      <TestForm />
 		< Footer />
 	</Router>
   );
