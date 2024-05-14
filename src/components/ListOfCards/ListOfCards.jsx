@@ -1,8 +1,9 @@
-import React from 'react';
 import CardForList from './CardForList/CardForList.jsx';
-import { words } from '../../API/words.js';
+import { WordsContext } from "../WordsContext.jsx";
+import { useContext } from "react";
 
 function ListOfCards() {
+    const { words } = useContext(WordsContext);
     const handleSubmit = (e) => {
         e.preventDefault();
     };
@@ -11,16 +12,17 @@ function ListOfCards() {
         <form onSubmit={handleSubmit}>
         <table>
             <tbody>
-                {words?.length &&
+                {!!words?.length &&
                     words.map((card) => (
-                        < CardForList
+                        <CardForList
                             key={card.id}
                             id={card.id}
                             category={card.tags}
                             word={card.english}
                             transcription={card.transcription}
                             translation={card.russian}
-                        />))}
+                        />
+                    ))}
             </tbody>
         </table>
         </form>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './cardForList.module.css';
 import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
@@ -7,7 +7,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 
 function CardForList({ id, category, word, transcription, translation }) {
-    const [editValues, setEditValues] = useState({ category, word, transcription, translation });
+    const [editValues, setEditValues] = useState({ id, category, word, transcription, translation });
     const [errors, setErrors] = useState({});
     const [isVisible, setIsVisible] = useState(true);
 
