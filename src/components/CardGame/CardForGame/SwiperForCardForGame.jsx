@@ -1,6 +1,5 @@
 import React, { forwardRef, useState } from 'react';
 import styles from "./swiperForCardForGame.module.css"
-// import { words } from "../../../API/words";
 import { WordsContext } from "../../WordsContext.jsx";
 import { useContext } from "react";
 import CardForGame from "./CardForGame";

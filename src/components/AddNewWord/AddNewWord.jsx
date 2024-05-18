@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import styles from "./addNewWord.module.css"
 import { fields } from '../../store/fields.js';
+import { WordsContext } from "../WordsContext.jsx";
+import { useContext } from "react";
 
 function AddNewWord() {
+    const { addedWord } = useContext(WordsContext);
     const [inputValues, setInputValues] = useState(
         fields.reduce((values, field) => ({ ...values, [field.id]: '' }), {})
     );
@@ -12,14 +15,14 @@ function AddNewWord() {
     const validateField = (id, value) => {
         let regex;
         switch(id) {
-            case 'Category':
-            case 'Word':
+            case 'tags':
+            case 'english':
                 regex = /^[A-Z]+$/i;
                 if (!regex.test(value)) {
                     return "Enter an english word";
                 }
                 break;
-            case 'Translation':
+            case 'russian':
                 regex = /^[А-ЯЁ]+$/i;
                 if (!regex.test(value)) {
                     return "Enter a russian word";
@@ -59,8 +62,7 @@ function AddNewWord() {
     const handleAddButtonClick = (e) => {
         e.preventDefault();
         if (!hasEmptyValue && !hasErrors) {
-            console.log('Input values:', inputValues);
-    
+            addedWord(inputValues);
             // Очистка полей формы
             setInputValues(fields.reduce((values, field) => ({ ...values, [field.id]: '' }), {}));
             setTouchedFields({});

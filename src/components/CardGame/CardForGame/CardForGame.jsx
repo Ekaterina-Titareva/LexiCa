@@ -18,7 +18,7 @@ const handleClick = () => {
         <div className={styles.word}>{props.word}</div>
         <div className={styles.transcription}>{props.transcription}</div>
         {showTranslation||props.isShownTranslations?.includes(props.currentIndex) ? 
-            <div>{props.translation}</div>
+            <div className={styles.translation}>{props.translation}</div>
             :
             <button className={styles.buttonTranslate} ref={ref} onClick={handleClick}>
                 Translate

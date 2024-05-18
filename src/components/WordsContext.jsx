@@ -25,7 +25,7 @@ useEffect(() => {
 
 
 const updateWordsState = (updatedWords) => {
-    setState(prevState => ({ ...prevState, words: updatedWords }));
+    setState(prevState => ({ ...prevState, words: updatedWords}));
 };
 
 const deleteWord = async (idOfWord) => {
@@ -38,21 +38,21 @@ const deleteWord = async (idOfWord) => {
     }
 };
 
-const changedWord = async (idOfWord, updatedWord) => {
-    try {
-        await changedWordApi(idOfWord, updatedWord);
-        updateWordsState(state.words.map(word => word.id === idOfWord ? updatedWord : word));
-        console.log(`changed ${idOfWord}`);
+const changedWord = async (updatedWord) => {
+        try {
+        await changedWordApi(updatedWord);
+        updateWordsState(state.words.map(word => word.id === updatedWord.id ? updatedWord : word));
+        console.log(`changed ${updatedWord.id}`)
     } catch (err) {
         console.error(err);
-    }
+        }
 };
 
 const addedWord = async (newWord) => {
     try {
         const response = await addedWordApi(newWord);
         updateWordsState([...state.words, response.data]);
-        console.log(`added new word with id ${response.data.id}`);
+        console.log(`added ${response.data.id}`);
     } catch (err) {
         console.error(err);
     }

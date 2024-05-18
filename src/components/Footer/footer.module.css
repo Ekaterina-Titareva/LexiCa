@@ -1,17 +1,6 @@
-.formWrapper {
-    display: flex;
-    flex-direction: column;
-}
+.getForm {
+    font-size: large;
+    cursor: pointer;
+    width: 30%;
 
-.title {
-    max-width: 600px;
-    padding-left: 100px;
-    margin: 10px 0;
-    text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-    .title {
-        padding-left: 10px;
-    }
 }

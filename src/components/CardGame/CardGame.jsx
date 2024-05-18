@@ -38,7 +38,7 @@ function CardGame() {
             <h2>
                 The game is over. <br /> Your result is {learnedCount} learned words.
             </h2>
-            <a href="/LexiCa/">
+            <a href="/">
                 <button>Back to home</button>
             </a>
         </>
