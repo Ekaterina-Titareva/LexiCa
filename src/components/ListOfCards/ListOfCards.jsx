@@ -1,14 +1,14 @@
+import { observer } from "mobx-react";
 import CardForList from './CardForList/CardForList.jsx';
-import { WordsContext } from "../WordsContext.jsx";
-import { useContext } from "react";
+import wordsStore from "../../store/WordsMobX.jsx";
 import Loader from '../UI/Loader/Loader.jsx';
 
-function ListOfCards() {
-    const { words, loading, error } = useContext(WordsContext);
+const ListOfCards = observer(() => {
+    const { words, loading, error} = wordsStore;
+
     const handleSubmit = (e) => {
         e.preventDefault();
     };
-
     return (
         loading ? (
         <Loader />
@@ -36,7 +36,7 @@ function ListOfCards() {
         </form>
     )
     );
-}
+})
 
 
 export default ListOfCards;

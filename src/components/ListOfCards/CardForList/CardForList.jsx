@@ -5,11 +5,11 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
-import { WordsContext } from "../../WordsContext.jsx";
-import { useContext } from "react";
+import wordsStore from "../../../store/WordsMobX.jsx";
+// import { observer, inject } from "mobx-react";
 
 function CardForList({ id, tags, english, transcription, russian }) {
-    const { changedWord, deleteWord } = useContext(WordsContext);
+    const { changedWord, deleteWord } = wordsStore;
     const [editValues, setEditValues] = useState({ id, tags, english, transcription, russian });
     const [errors, setErrors] = useState({});
     const [isVisible, setIsVisible] = useState(true);

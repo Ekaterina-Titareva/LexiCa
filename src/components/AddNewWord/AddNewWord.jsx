@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import styles from "./addNewWord.module.css"
 import { fields } from '../../store/fields.js';
-import { WordsContext } from "../WordsContext.jsx";
-import { useContext } from "react";
+import wordsStore from "../../store/WordsMobX.jsx";
 
 function AddNewWord() {
-    const { addedWord } = useContext(WordsContext);
+    const { addedWord } = wordsStore;
     const [inputValues, setInputValues] = useState(
         fields.reduce((values, field) => ({ ...values, [field.id]: '' }), {})
     );
