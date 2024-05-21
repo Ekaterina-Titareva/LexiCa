@@ -1,0 +1,17 @@
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    max-width: 600px;
+    padding-left: 100px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        padding-left: 10px;
+    }
+}

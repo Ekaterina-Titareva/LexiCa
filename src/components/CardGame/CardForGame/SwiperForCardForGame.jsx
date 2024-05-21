@@ -1,11 +1,12 @@
 import React, { forwardRef, useState } from 'react';
 import styles from "./swiperForCardForGame.module.css"
-import { words } from "../../../API/words";
+import wordsStore from "../../../store/WordsStore.jsx"
 import CardForGame from "./CardForGame";
 import arrowLeft from "../../../assets/icons/arrow-left.svg"
 import arrowRight from "../../../assets/icons/arrow-right.svg"
 
 const SwiperForCardForGame = forwardRef((props, ref) => {
+    const { words } = wordsStore;
     const [isShownTranslations, setIsShownTranslations]= useState([])
     const handlePrevClick = () => {
         if (props.currentIndex > 0) {

@@ -1,21 +1,21 @@
 export const fields = [
     {
-    id: "Category",
+    id: "tags",
     placeholder: "Adjective",
     name: "Category",
     },
     {
-    id: "Word",
+    id: "english",
     placeholder: "Adult",
     name: "Word",
     },
     {
-    id: "Transcription",
+    id: "transcription",
     placeholder: "[ˈædʌlt]",
     name: "Transcription",
     },
     {
-    id: "Translation",
+    id: "russian",
     placeholder: "взрослый",
     name: "Translation",
     },

@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { observer } from "mobx-react";
 import styles from './cardForList.module.css';
 import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
+import wordsStore from "../../../store/WordsStore.jsx";
 
-function CardForList({ id, category, word, transcription, translation }) {
-    const [editValues, setEditValues] = useState({ category, word, transcription, translation });
+const CardForList = observer(({ id, tags, english, transcription, russian }) =>  {
+    const { changedWord, deleteWord } = wordsStore;
+    const [editValues, setEditValues] = useState({ id, tags, english, transcription, russian });
     const [errors, setErrors] = useState({});
     const [isVisible, setIsVisible] = useState(true);
 
@@ -15,14 +18,14 @@ function CardForList({ id, category, word, transcription, translation }) {
     const validateField = (name, value) => {
         let regex;
         switch(name) {
-            case 'category':
-            case 'word':
+            case 'tags':
+            case 'english':
                 regex = /^[A-Z]+$/i;
                 if (!regex.test(value)) {
                     return "Enter an english word";
                 }
                 break;
-            case 'translation':
+            case 'russian':
                 regex = /^[А-ЯЁ]+$/i;
                 if (!regex.test(value)) {
                     return "Enter a russian word";
@@ -60,7 +63,7 @@ function CardForList({ id, category, word, transcription, translation }) {
         }, {});
 
         if (Object.keys(formErrors).length === 0) {
-            console.log('Сохраненные данные:', editValues);
+            changedWord(editValues)
             setIsVisible(true);
         } else {
             setErrors(formErrors);
@@ -80,15 +83,17 @@ function CardForList({ id, category, word, transcription, translation }) {
             { isVisible ? (
                 <tr>
                     <td>{id}</td>
-                    <td>{category}</td>
-                    <td>{word}</td>
+                    <td>{tags}</td>
+                    <td>{english}</td>
                     <td>{transcription}</td>
-                    <td>{translation}</td>
+                    <td>{russian}</td>
                     <td className={styles.buttons}>
                         <Fab className={styles.buttonEdit} title="edit" color="error" size="small" aria-label="edit" onClick={handleToggle}>
                             <EditIcon />
                         </Fab>
-                        <Fab className={styles.buttonDelete} title="delete" color="error" size="small" aria-label="delete">
+                        <Fab className={styles.buttonDelete} 
+                            onClick={()=> deleteWord(id)}
+                            title="delete" color="error" size="small" aria-label="delete">
                             <DeleteIcon />
                         </Fab>
                     </td>
@@ -100,23 +105,23 @@ function CardForList({ id, category, word, transcription, translation }) {
                         <input 
                             className={styles.input} 
                             type="text" 
-                            name="category"
-                            value={editValues.category}
+                            name="tags"
+                            value={editValues.tags}
                             onChange={handleInputChange}
                             placeholder="Category"
                         />
-                        {errors.category && <div className={styles.error}>{errors.category}</div>}
+                        {errors.tags && <div className={styles.error}>{errors.tags}</div>}
                     </td>
                     <td>
                         <input 
                             className={styles.input} 
                             type="text" 
-                            name="word"
-                            value={editValues.word}
+                            name="english"
+                            value={editValues.english}
                             onChange={handleInputChange}
                             placeholder="Word"
                         />
-                        {errors.word && <div className={styles.error}>{errors.word}</div>}
+                        {errors.english && <div className={styles.error}>{errors.english}</div>}
                     </td>
                     <td>
                         <input 
@@ -133,12 +138,12 @@ function CardForList({ id, category, word, transcription, translation }) {
                         <input 
                             className={styles.input} 
                             type="text" 
-                            name="translation"
-                            value={editValues.translation}
+                            name="russian"
+                            value={editValues.russian}
                             onChange={handleInputChange}
                             placeholder="Translation"
                         />
-                        {errors.translation && <div className={styles.error}>{errors.translation}</div>}
+                        {errors.russian && <div className={styles.error}>{errors.russian}</div>}
                     </td>
                     <td className={styles.buttons}>
                         <Fab 
@@ -168,7 +173,7 @@ function CardForList({ id, category, word, transcription, translation }) {
             )}
         </>
     );
-}
+})
 
 export default CardForList;
 
