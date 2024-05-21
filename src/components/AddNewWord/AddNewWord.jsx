@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { observer } from "mobx-react";
 import styles from "./addNewWord.module.css"
 import { fields } from '../../store/fields.js';
-import wordsStore from "../../store/WordsMobX.jsx";
+import wordsStore from "../../store/WordsStore.jsx";
 
-function AddNewWord() {
+const AddNewWord = observer(() => {
     const { addedWord } = wordsStore;
     const [inputValues, setInputValues] = useState(
         fields.reduce((values, field) => ({ ...values, [field.id]: '' }), {})
@@ -104,6 +105,6 @@ function AddNewWord() {
             </table>
         </form>
     );
-}
+})
 
 export default AddNewWord;

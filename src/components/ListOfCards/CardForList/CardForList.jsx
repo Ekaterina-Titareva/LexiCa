@@ -1,14 +1,14 @@
 import { useState } from 'react';
+import { observer } from "mobx-react";
 import styles from './cardForList.module.css';
 import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
-import wordsStore from "../../../store/WordsMobX.jsx";
-// import { observer, inject } from "mobx-react";
+import wordsStore from "../../../store/WordsStore.jsx";
 
-function CardForList({ id, tags, english, transcription, russian }) {
+const CardForList = observer(({ id, tags, english, transcription, russian }) =>  {
     const { changedWord, deleteWord } = wordsStore;
     const [editValues, setEditValues] = useState({ id, tags, english, transcription, russian });
     const [errors, setErrors] = useState({});
@@ -173,7 +173,7 @@ function CardForList({ id, tags, english, transcription, russian }) {
             )}
         </>
     );
-}
+})
 
 export default CardForList;
 

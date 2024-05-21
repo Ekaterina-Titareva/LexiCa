@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from 'react';
 import styles from "./swiperForCardForGame.module.css"
-import wordsStore from "../../../store/WordsMobX.jsx"
+import wordsStore from "../../../store/WordsStore.jsx"
 import CardForGame from "./CardForGame";
 import arrowLeft from "../../../assets/icons/arrow-left.svg"
 import arrowRight from "../../../assets/icons/arrow-right.svg"

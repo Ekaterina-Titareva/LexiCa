@@ -1,21 +1,25 @@
 import { observer } from "mobx-react";
 import CardForList from './CardForList/CardForList.jsx';
-import wordsStore from "../../store/WordsMobX.jsx";
+import wordsStore from "../../store/WordsStore.jsx";
 import Loader from '../UI/Loader/Loader.jsx';
+import { useEffect } from "react";
 
 const ListOfCards = observer(() => {
-    const { words, loading, error} = wordsStore;
+    const { words, loading, error, fetchWords} = wordsStore;
 
     const handleSubmit = (e) => {
         e.preventDefault();
     };
+    useEffect(() => {
+        fetchWords()
+    }, [words]);
     return (
         loading ? (
         <Loader />
     ) : error ? (
-        <h1>
-        If you have problems on the server, please contact the support service
-        </h1>
+        <h2>
+        We have problems on the server, please contact the support service
+        </h2>
     ) : (
         <form onSubmit={handleSubmit}>
         <table>

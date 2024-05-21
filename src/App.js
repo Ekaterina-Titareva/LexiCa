@@ -1,6 +1,4 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-import { Provider } from "mobx-react";
-import wordsStore from "./store/WordsMobX.jsx";
 import Header from "./components/Header/Header.jsx"
 import ListOfCards from "./components/ListOfCards/ListOfCards.jsx";
 import AddNewWord from "./components/AddNewWord/AddNewWord.jsx";
@@ -12,7 +10,6 @@ import Error404 from './components/Error404/Error404.jsx';
 
 function App() {
   return (
-    <Provider store={wordsStore}>
       <Router>
       < Header />
       <Routes>
@@ -31,7 +28,6 @@ function App() {
         </Routes>
       < Footer />
     </Router>
-  </Provider>
   );
 }
 
