@@ -14,3 +14,9 @@
 .button:hover {
     filter: var(--filterDropShadow);
 }
+
+@media screen and (max-width: 767px) {
+    .swiper {
+        flex-direction: column;
+    }
+}
