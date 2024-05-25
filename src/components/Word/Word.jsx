@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { observer } from "mobx-react";
-import styles from './cardForList.module.css';
+import styles from './word.module.css';
 import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
-import wordsStore from "../../../store/WordsStore.jsx";
+import wordsStore from "../../servises/WordsStore.jsx";
+import TableInput from '../TableInput/TableInput.jsx';
 
-const CardForList = observer(({ id, tags, english, transcription, russian }) =>  {
+const Word = observer(({ id, tags, english, transcription, russian }) =>  {
     const { changedWord, deleteWord } = wordsStore;
     const [editValues, setEditValues] = useState({ id, tags, english, transcription, russian });
     const [errors, setErrors] = useState({});
@@ -88,12 +89,22 @@ const CardForList = observer(({ id, tags, english, transcription, russian }) => 
                     <td>{transcription}</td>
                     <td>{russian}</td>
                     <td className={styles.buttons}>
-                        <Fab className={styles.buttonEdit} title="edit" color="error" size="small" aria-label="edit" onClick={handleToggle}>
+                        <Fab className={styles.buttonEdit} 
+                            title="edit" 
+                            color="error" 
+                            size="small" 
+                            aria-label="edit" 
+                            onClick={handleToggle}
+                            >
                             <EditIcon />
                         </Fab>
                         <Fab className={styles.buttonDelete} 
+                            title="delete" 
+                            color="error" 
+                            size="small" 
+                            aria-label="delete"
                             onClick={()=> deleteWord(id)}
-                            title="delete" color="error" size="small" aria-label="delete">
+                            >
                             <DeleteIcon />
                         </Fab>
                     </td>
@@ -101,50 +112,39 @@ const CardForList = observer(({ id, tags, english, transcription, russian }) => 
             ) : (
                 <tr>
                     <td>{id}</td>
-                    <td>
-                        <input 
-                            className={styles.input} 
-                            type="text" 
-                            name="tags"
-                            value={editValues.tags}
-                            onChange={handleInputChange}
-                            placeholder="Category"
-                        />
-                        {errors.tags && <div className={styles.error}>{errors.tags}</div>}
-                    </td>
-                    <td>
-                        <input 
-                            className={styles.input} 
-                            type="text" 
-                            name="english"
-                            value={editValues.english}
-                            onChange={handleInputChange}
-                            placeholder="Word"
-                        />
-                        {errors.english && <div className={styles.error}>{errors.english}</div>}
-                    </td>
-                    <td>
-                        <input 
-                            className={styles.input} 
-                            type="text" 
-                            name="transcription"
-                            value={editValues.transcription}
-                            onChange={handleInputChange}
-                            placeholder="Transcription"
-                        />
-                        {errors.transcription && <div className={styles.error}>{errors.transcription}</div>}
-                    </td>
-                    <td>
-                        <input 
-                            className={styles.input} 
-                            type="text" 
-                            name="russian"
-                            value={editValues.russian}
-                            onChange={handleInputChange}
-                            placeholder="Translation"
-                        />
-                        {errors.russian && <div className={styles.error}>{errors.russian}</div>}
-                    </td>
+                    <TableInput
+                        type={"text"}
+                        name={"tags"}
+                        value={editValues.tags}
+                        handleInputChange={handleInputChange}
+                        placeholder={"Category"}
+                        errors={errors.tags}
+                    />
+                    <TableInput
+                        type={"text"} 
+                        name={"english"}
+                        value={editValues.english}
+                        handleInputChange={handleInputChange}
+                        placeholder={"Word"}
+                        errors={errors.english}
+                    />
+                    <TableInput
+                        type="text" 
+                        name="transcription"
+                        value={editValues.transcription}
+                        handleInputChange={handleInputChange}
+                        placeholder="Transcription"
+                        errors={errors.transcription}
+                    />
+                    <TableInput
+                        className={styles.input} 
+                        type={"text"}
+                        name={"russian"}
+                        value={editValues.russian}
+                        handleInputChange={handleInputChange}
+                        placeholder={"Translation"}
+                        errors={errors.russian}
+                    />
                     <td className={styles.buttons}>
                         <Fab 
                             className={styles.buttonSave} 
@@ -160,11 +160,11 @@ const CardForList = observer(({ id, tags, english, transcription, russian }) => 
                         </Fab>
                         <Fab  
                             className={styles.buttonCancel} 
-                            onClick={handleToggle} 
                             title="cancel" 
                             color="error" 
                             size="small" 
                             aria-label="cancel"
+                            onClick={handleToggle} 
                         >
                             <CloseIcon />
                         </Fab>
@@ -175,6 +175,6 @@ const CardForList = observer(({ id, tags, english, transcription, russian }) => 
     );
 })
 
-export default CardForList;
+export default Word;
 
 

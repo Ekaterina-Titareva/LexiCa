@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import SwiperForCardForGame from './CardForGame/SwiperForCardForGame';
+import SwiperForCardForGame from '../../components/SwiperForCardForGame/SwiperForCardForGame';
 
 function CardGame() {
     const [game, setGame] = useState(true);
     const handleSetGame = () => {
         setGame(false)
     }
-
     const [learnedCount, setLearnedCount] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const incrementLearnedCount = () => {

@@ -1,32 +1,26 @@
-import { observer } from "mobx-react";
-import CardForList from './CardForList/CardForList.jsx';
-import wordsStore from "../../store/WordsStore.jsx";
-import Loader from '../UI/Loader/Loader.jsx';
 import { useEffect } from "react";
+import { observer } from "mobx-react";
+import Word from '../../components/Word/Word.jsx';
+import wordsStore from "../../servises/WordsStore.jsx"
+import Loader from '../../components/Loader/Loader.jsx';
 
-const ListOfCards = observer(() => {
+const ListOfWords = observer(() => {
     const { words, loading, error, fetchWords} = wordsStore;
-
+    useEffect(() => {
+        fetchWords()
+    }, [fetchWords]);
     const handleSubmit = (e) => {
         e.preventDefault();
     };
-    useEffect(() => {
-        fetchWords()
-    }, [words]);
+    if (loading) return <Loader />;
+    if (error) return <h2>We have problems on the server, please contact the support service</h2>;
     return (
-        loading ? (
-        <Loader />
-    ) : error ? (
-        <h2>
-        We have problems on the server, please contact the support service
-        </h2>
-    ) : (
         <form onSubmit={handleSubmit}>
         <table>
             <tbody>
                 {!!words?.length &&
                     words.map((card) => (
-                        <CardForList
+                        <Word
                             key={card.id}
                             id={card.id}
                             tags={card.tags}
@@ -38,9 +32,7 @@ const ListOfCards = observer(() => {
             </tbody>
         </table>
         </form>
-    )
     );
 })
 
-
-export default ListOfCards;
+export default ListOfWords;

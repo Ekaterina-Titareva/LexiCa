@@ -1,5 +1,5 @@
 .header {
-position: fixed;
+position: sticky;
 top: 0; 
 width: 100vw;
 height: 20%;
@@ -11,6 +11,7 @@ background: rgb(0,0,0);
 background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 58%);
 z-index: 2000;
 color: var(--colorWhite);
+padding-top: 50px;
 }
 
 .logo {

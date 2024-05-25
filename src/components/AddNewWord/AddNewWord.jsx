@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { observer } from "mobx-react";
 import styles from "./addNewWord.module.css"
-import { fields } from '../../store/fields.js';
-import wordsStore from "../../store/WordsStore.jsx";
+import { fields } from '../../servises/fields.js';
+import wordsStore from "../../servises/WordsStore.jsx";
+import TableInput from '../TableInput/TableInput.jsx';
+import validateField from '../../servises/validation.js';
 
 const AddNewWord = observer(() => {
     const { addedWord } = wordsStore;
@@ -11,28 +13,6 @@ const AddNewWord = observer(() => {
     );
     const [touchedFields, setTouchedFields] = useState({});
     const [errors, setErrors] = useState({});
-
-    const validateField = (id, value) => {
-        let regex;
-        switch(id) {
-            case 'tags':
-            case 'english':
-                regex = /^[A-Z]+$/i;
-                if (!regex.test(value)) {
-                    return "Enter an english word";
-                }
-                break;
-            case 'russian':
-                regex = /^[А-ЯЁ]+$/i;
-                if (!regex.test(value)) {
-                    return "Enter a russian word";
-                }
-                break;
-            default:
-                return '';
-        }
-        return '';
-    };
 
     const handleInputChange = (e, id) => {
         const value = e.target.value;
@@ -54,11 +34,6 @@ const AddNewWord = observer(() => {
     const hasEmptyValue = Object.values(inputValues).some(value => value.trim() === "");
     const hasErrors = Object.values(errors).some(error => error !== '');
 
-    // Функция для определения класса стиля поля ввода
-    const inputClassName = (id) => {
-        return `${styles.input} ${(touchedFields[id] && inputValues[id].trim() === '') || errors[id] ? styles.error : ''}`;
-    };
-
     const handleAddButtonClick = (e) => {
         e.preventDefault();
         if (!hasEmptyValue && !hasErrors) {
@@ -79,19 +54,17 @@ const AddNewWord = observer(() => {
                             <p className={styles.label}>Id</p>
                         </td>
                         {fields.map((field) => (
-                            <td key={field.id} className={field.className}>
-                                <p className={styles.label} htmlFor={field.id} title={field.title}>{field.name}</p>
-                                <input 
-                                    className={inputClassName(field.id)} 
-                                    type="text" 
-                                    id={field.id} 
-                                    placeholder={field.placeholder} 
-                                    value={inputValues[field.id]} 
-                                    onChange={(e) => handleInputChange(e, field.id)}
-                                    onBlur={() => setTouchedFields({ ...touchedFields, [field.id]: true })}
-                                />
-                                {errors[field.id] && <div className={styles.errorMsg}>{errors[field.id]}</div>}
-                            </td>
+                            <TableInput 
+                            key={field.id}
+                            id={field.id}
+                            type={"text"} 
+                            placeholder={field.placeholder} 
+                            value={inputValues[field.id]} 
+                            handleInputChange={(e) => handleInputChange(e, field.id)}
+                            onBlur={() => setTouchedFields({ ...touchedFields, [field.id]: true })}
+                            errors={errors[field.id]}
+                            label={<p className={styles.label} htmlFor={field.id} title={field.title}>{field.name}</p>}
+                            />
                         ))}
                         <td>
                             <button

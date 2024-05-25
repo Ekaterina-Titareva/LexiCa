@@ -1,4 +1,18 @@
-@import './assets/style/variables.css';
+:root {
+  --primary-color: rgb(0, 0, 0);
+  --secondary-color: rgba(255, 0, 0, 0.9);
+  --third-color: rgb(255, 3, 45);
+  --forth-color: rgb(255, 255, 255);
+  --border: 1px solid rgb(255, 0, 43);
+  --borderInput: 2px solid rgba(255, 0, 43, 0.77);
+  --gradient: linear-gradient(to top, rgb(255, 0, 43) 0%, rgba(255, 0, 43, 0.5) 100%);
+  --colorWhite: rgb(255, 255, 255);
+  --boxShadowCardCatalog: 1px 1px 1px 1px rgba(255, 0, 43, 0.417);
+  --borderCardCatalog: 2px solid #000000b3;
+  --borderCardList: 1px solid #000000b3; 
+  --filterDropShadow: drop-shadow(0 0 .5em rgb(255, 0, 43));
+  --font: "Roboto";
+}
 
 body {
   margin: 0;
@@ -12,11 +26,10 @@ body {
   justify-content: space-between;
   text-align: center;
   gap: 30px;
-  min-height: calc(100vh - 200px);
+  min-height: 100vh;
   min-width: 320px;
   background: rgb(255,0,0);
   background: linear-gradient(0deg, rgba(255,0,0,0.9) 0%, rgba(0,0,0,0.9) 58%);
-  padding-top: 200px;
 }
 
 h1, h2 {
@@ -62,9 +75,6 @@ td {
   }
 }
 @media screen and (max-width: 860px) {
-  #root {
-    padding-top: 220px;
-  }
 
   main {
     margin: 0 50px;
