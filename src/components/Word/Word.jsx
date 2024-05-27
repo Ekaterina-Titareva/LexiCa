@@ -89,24 +89,14 @@ const Word = observer(({ id, tags, english, transcription, russian }) =>  {
                     <td>{transcription}</td>
                     <td>{russian}</td>
                     <td className={styles.buttons}>
-                        <Fab className={styles.buttonEdit} 
-                            title="edit" 
-                            color="error" 
-                            size="small" 
-                            aria-label="edit" 
+                        <button className={styles.buttonEdit} 
                             onClick={handleToggle}
-                            >
-                            <EditIcon />
-                        </Fab>
-                        <Fab className={styles.buttonDelete} 
-                            title="delete" 
-                            color="error" 
-                            size="small" 
-                            aria-label="delete"
+                            >Редактировать
+                        </button>
+                        <button className={styles.buttonDelete} 
                             onClick={()=> deleteWord(id)}
-                            >
-                            <DeleteIcon />
-                        </Fab>
+                            >Удалить
+                        </button>
                     </td>
                 </tr>
             ) : (
@@ -146,28 +136,18 @@ const Word = observer(({ id, tags, english, transcription, russian }) =>  {
                         errors={errors.russian}
                     />
                     <td className={styles.buttons}>
-                        <Fab 
+                        <button 
                             className={styles.buttonSave} 
                             type='submit' 
-                            title="save" 
-                            color="error" 
-                            size="small" 
-                            aria-label="save" 
                             onClick={handleSave}
                             disabled={isDisabled}
-                        >
-                            <CheckIcon />
-                        </Fab>
-                        <Fab  
+                        >Сохранить
+                        </button>
+                        <button  
                             className={styles.buttonCancel} 
-                            title="cancel" 
-                            color="error" 
-                            size="small" 
-                            aria-label="cancel"
                             onClick={handleToggle} 
-                        >
-                            <CloseIcon />
-                        </Fab>
+                        >Отменить
+                        </button>
                     </td>
                 </tr>
             )}

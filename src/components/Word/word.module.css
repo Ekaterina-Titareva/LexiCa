@@ -7,9 +7,7 @@
     border: var(--borderCardList);
 
     .word {
-        color: var( --forth-color);
-        font-size: 28px;
-        font-weight: 700;
+        @apply text-xl;
     }
 
     .category {
@@ -43,33 +41,8 @@
     padding-right: 10px;
 }
 
-.buttonEdit, .buttonDelete, .buttonSave, .buttonCancel {
-    padding: 5px 8px;
-    border-radius: 50%;
-    background-image: var(--gradient);
-    color: var(--colorWhite);
-    border: var(--border);
-    cursor: pointer;
-    margin: 0 3px;
-}
-
-.buttonDelete {
-    padding: 5px 5px;
-}
-
-.buttonEdit:hover, .buttonDelete:hover, .buttonSave:hover, .buttonCancel:hover {
-    filter: var(--filterDropShadow);
-}
-
-
-.buttonEdit:disabled, .buttonDelete:disabled, .buttonSave:disabled, .buttonCancel:disabled,
-.buttonEdit:disabled:hover, .buttonDelete:disabled:hover, .buttonSave:disabled:hover, .buttonCancel:disabled:hover,
-.buttonEdit:disabled:active, .buttonDelete:disabled:active, .buttonSave:disabled:active, .buttonCancel:disabled:active {
-    background-color: #ccc;
-    color: rgb(97, 97, 97);
-    border-color: #ccc;
-    cursor: unset;
-    filter: unset;
+button {
+    @apply mx-2 py-1 px-5 block cursor-pointer text-white text-lg border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20 disabled:bg-slate-500/60 disabled:text-slate-700 disabled:border-none disabled:cursor-none;
 }
 
 @media screen and (max-width: 860px) {

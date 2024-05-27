@@ -5,7 +5,6 @@ import logo from '../../assets/icons/leaf.svg'
 function Header() {
 return (
     <header className={styles.header}>
-    <div className={styles.logo}>
         <Link to={'/'}>
             <div className={styles.logoI}>
                 <div className={styles.imgWrapper}>
@@ -14,8 +13,7 @@ return (
                 <h1 className={styles.logoName}>LexiCa</h1>
             </div>
         </Link> 
-        <h2 className={styles.logoText}> - Ваш помощник в запоминании английских слов</h2>
-    </div>
+        <h2 className={styles.logoText}>Ваш помощник в запоминании английских слов</h2>
     <nav>
         <ul>
             <li><Link className={styles.link} to={'/'}>Список слов</Link></li>

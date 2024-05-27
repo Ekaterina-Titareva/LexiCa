@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --primary-color: rgb(0, 0, 0);
   --secondary-color: rgba(255, 0, 0, 0.9);
@@ -15,74 +19,53 @@
 }
 
 body {
-  margin: 0;
-  font-family: var(--font);
-  font-weight: 500;
+  @apply m-0 font-mono font-medium;
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  gap: 30px;
-  min-height: 100vh;
-  min-width: 320px;
-  background: rgb(0, 198, 185);
-  background: repeating-conic-gradient(rgb(39, 39, 39) 0% 3%, rgb(33, 33, 33) 3% 6%);
+  @apply min-h-screen flex flex-col justify-between text-center gap-8 min-w-80 bg-gradient-to-r from-sky-500 to-indigo-500;
 }
 
 h1, h2 {
-  padding: 0 5px;
-  margin: 0;
-  color: var(--colorWhite);
+  @apply px-1 m-0 text-2xl text-white;
 }
 
 a {
-  text-decoration: none;
-  color: black;
+  @apply text-black no-underline;
 }
 
 main {
-  margin: 0 100px;
+  @apply mx-24;
 }
 
 table {
-  background-color: #ffffff40;
-  border-spacing: 5px;
-  border-collapse: collapse;
-  width: 100%;
+  @apply bg-white/40 w-full;
 }
 
 tr {
-  border-bottom: 1px solid #ccc;
-}
-
-tr:hover {
-  background-color: #ffffff40;
+  @apply border-b-2 hover:bg-white/40;
 }
 
 td {
-  padding: 10px;
+  @apply p-3;
 }
 
 @media screen and (max-width: 1150px) {
   main {
-    margin: 0 10px;
+    @apply mx-3;
   }
   td {
-    padding: 2px;
+    @apply p-2;
   }
 }
 @media screen and (max-width: 860px) {
 
   main {
-    margin: 0 50px;
+    @apply mx-12;
   }
 
   tr {
-    display: block;
-    border: none;
+    @apply block border-0;
   }
 
   td {
