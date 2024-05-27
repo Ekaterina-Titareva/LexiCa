@@ -2,21 +2,21 @@ export const fields = [
     {
     id: "tags",
     placeholder: "Adjective",
-    name: "Category",
+    name: "Категория",
     },
     {
     id: "english",
     placeholder: "Adult",
-    name: "Word",
+    name: "Слово",
     },
     {
     id: "transcription",
     placeholder: "[ˈædʌlt]",
-    name: "Transcription",
+    name: "Транскрипция",
     },
     {
     id: "russian",
     placeholder: "взрослый",
-    name: "Translation",
+    name: "Перевод",
     },
 ]

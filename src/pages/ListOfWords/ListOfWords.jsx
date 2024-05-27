@@ -13,7 +13,7 @@ const ListOfWords = observer(() => {
         e.preventDefault();
     };
     if (loading) return <Loader />;
-    if (error) return <h2>We have problems on the server, please contact the support service</h2>;
+    if (error) return <h2>Проблема с сервером, обратитесь в службу поддержки, пожалуйста</h2>;
     return (
         <form onSubmit={handleSubmit}>
         <table>

@@ -20,7 +20,7 @@ function CardGame() {
     return game ? 
     (
         <>
-            <h2>Here you can practice memorizing new words</h2>
+            <h2>Здесь Вы можете попрактиковаться в запоминании новых слов</h2>
             <SwiperForCardForGame
                 currentIndex = {currentIndex}
                 setCurrentIndex = {setCurrentIndex}
@@ -28,17 +28,17 @@ function CardGame() {
                 handleSetGame={handleSetGame}
                 ref={ref}
             />
-            <div>The number of words learned: {learnedCount}</div>
+            <div>Количество выученных слов: {learnedCount}</div>
         </>
     )
     :
     (
         <>
             <h2>
-                The game is over. <br /> Your result is {learnedCount} learned words.
+                Тренировка окончена. <br /> Количество изученных слов: {learnedCount}.
             </h2>
             <a href="/">
-                <button>Back to home</button>
+                Вернуться к списку слов
             </a>
         </>
     );

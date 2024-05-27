@@ -71,7 +71,7 @@ const AddNewWord = observer(() => {
                                 disabled={hasEmptyValue || hasErrors}
                                 type='submit'
                                 className={styles.buttonAdd}
-                            >Add</button>
+                            >Добавить слово</button>
                         </td>
                     </tr>
                 </thead>

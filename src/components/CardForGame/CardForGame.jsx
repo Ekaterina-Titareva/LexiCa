@@ -21,7 +21,7 @@ const handleClick = () => {
             <div className={styles.translation}>{props.translation}</div>
             :
             <button className={styles.buttonTranslate} ref={ref} onClick={handleClick}>
-                Translate
+                Показать перевод
             </button>            
         }
         </div>

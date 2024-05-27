@@ -28,8 +28,8 @@ body {
   gap: 30px;
   min-height: 100vh;
   min-width: 320px;
-  background: rgb(255,0,0);
-  background: linear-gradient(0deg, rgba(255,0,0,0.9) 0%, rgba(0,0,0,0.9) 58%);
+  background: rgb(0, 198, 185);
+  background: repeating-conic-gradient(rgb(39, 39, 39) 0% 3%, rgb(33, 33, 33) 3% 6%);
 }
 
 h1, h2 {

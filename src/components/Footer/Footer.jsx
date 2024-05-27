@@ -4,17 +4,17 @@ import styles from './footer.module.css'
 import React from 'react';
 
 function Footer() {
-    const [isForm, getForm] = useState(true);
-    const handleGetForm = () => {
-        getForm(false)
-    }
+    // const [isForm, getForm] = useState(true);
+    // const handleGetForm = () => {
+    //     getForm(false)
+    // }
     return (
         <footer>
-            { isForm ?
+            {/* { isForm ?
             <p onClick={handleGetForm} className={styles.getForm}>Report an issue you are having with our site</p>
             :
             <FooterForm />
-            }
+            } */}
         </footer>
     )
 }
