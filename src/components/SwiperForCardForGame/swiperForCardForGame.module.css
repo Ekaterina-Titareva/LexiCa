@@ -1,14 +1,10 @@
 
 .swiper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 50px;
+    @apply flex flex-row items-center content-center m-12;
 }
 
 @media screen and (max-width: 767px) {
     .swiper {
-        flex-direction: column;
+        @apply flex flex-col gap-2;
     }
 }

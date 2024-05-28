@@ -1,60 +1,9 @@
 
 .buttonAdd {
-    @apply mx-2 py-1 px-5 block cursor-pointer text-white text-lg border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20 disabled:bg-slate-500/60 disabled:text-slate-700 disabled:border-none disabled:cursor-none;
+    @apply mx-2 py-1 px-5 block min-w-40 cursor-pointer text-white text-lg border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20 disabled:bg-slate-500/60 disabled:text-slate-700 disabled:border-none disabled:cursor-none;
 }
 
 
 .label {
-    font-size: 20px;
-    margin: 0 5px;
-    font-weight: 600;
-    color: var(--colorWhite);
+    @apply mx-2 text-2xl text-white;
 }
-
-.input {
-    text-align: center;
-    border-radius: 10px;
-    padding: 5px;
-    cursor: pointer;
-    background-color: transparent;
-}
-input::placeholder {
-    color: var(--colorWhite);
-}
-
-.input:hover {
-    background-color:  rgba(255, 255, 255, 0.417);
-    
-}
-
-.error {
-    border: 1px solid red;
-}
-
-.errorMsg {
-    color: #000000;
-    font-size: smaller;
-    font-weight: 300;
-}
-
-
-@media screen and (max-width: 1150px) {
-    .input{
-    padding: 0;
-    }
-    .buttonAdd {
-        width: 80px;
-    }
-}
-
-
-
-@media screen and (max-width: 860px) {
-    .input{
-    padding: 5px;
-    }
-    .buttonAdd {
-        width: 150px;
-    }
-}
-

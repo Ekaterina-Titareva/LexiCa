@@ -1,9 +1,9 @@
 .header {
-    @apply sticky top-0 h-1/5 flex flex-row justify-around items-end bg-white/30 pt-14 pb-4 text-white z-50;
+    @apply sticky top-0 h-1/5 flex flex-row justify-around items-end bg-white/30 pt-8 pb-4 text-white z-50;
 }
 
 .logoI {
-    @apply flex flex-row justify-center gap-2;
+    @apply flex flex-row justify-center items-center gap-2;
 }
 
 .logoName {
@@ -35,14 +35,11 @@ ul {
 
 @media screen and (max-width: 1024px) {
     .header {
-        @apply flex-col justify-center;
+        @apply flex-col justify-center items-center gap-4;
         }
 }
 
 @media screen and (max-width: 769px) {
-    .header {
-        @apply flex-col justify-center;
-        }
         .logoText {
             @apply hidden;
         }

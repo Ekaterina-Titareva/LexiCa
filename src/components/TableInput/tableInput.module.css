@@ -1,21 +1,8 @@
 .input {
-    padding: 0;
-    margin: 0;
-    padding-block: 0;
-    padding-inline:0;
-    background-color: transparent;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
+    @apply border-2 border-indigo-600 p-0 m-0 bg-white/30 cursor-pointer text-center rounded-xl hover:bg-white/60 placeholder:text-black/50 overflow-hidden;
 }
 
-.input:hover {
-    background-color:  rgba(255, 255, 255, 0.417);
-}
 
 .error {
-    margin-top: 5px;
-    color: #000000;
-    font-size: smaller;
-    font-weight: 300;
+    @apply mt-2 text-black text-xs;
 }

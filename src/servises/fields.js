@@ -1,12 +1,12 @@
 export const fields = [
     {
     id: "tags",
-    placeholder: "Adjective",
+    placeholder: "adjective",
     name: "Категория",
     },
     {
     id: "english",
-    placeholder: "Adult",
+    placeholder: "adult",
     name: "Слово",
     },
     {

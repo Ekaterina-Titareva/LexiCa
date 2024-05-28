@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import FooterForm from './FooterForm/FooterForm';
-import styles from './footer.module.css'
 import React from 'react';
 
 function Footer() {

@@ -1,54 +1,20 @@
-.card {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 0.5fr repeat(5, 1fr);
-    border-collapse: collapse;
-    width: 100%;
-    border: var(--borderCardList);
 
-    .word {
-        @apply text-xl;
-    }
-
-    .category {
-        margin: 2px;
-        color: var(--third-color);
-    }
-
-    .transcription {
-        color: var( --forth-color);
-        font-size: 20px;
-        font-weight: 500;
-    }
-
-    .translation {
-        width: 150px;
-        height: 40px;
-        margin: 0 auto;
-        font-size: 24px;
-        margin-top: 10px;
-        border-radius: 10px;
-        color: var(--third-color);
-    }
+.word {
+    @apply text-xl;
 }
 
+
 .buttons {
-    display: flex;
-    min-width: 100px;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 20px;
-    padding-right: 10px;
+    @apply flex min-w-20 items-center text-base;
 }
 
 button {
-    @apply mx-2 py-1 px-5 block cursor-pointer text-white text-lg border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20 disabled:bg-slate-500/60 disabled:text-slate-700 disabled:border-none disabled:cursor-none;
+    @apply mx-2 py-1 px-4 block cursor-pointer text-white text-lg border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20 disabled:bg-slate-500/60 disabled:text-slate-700 disabled:border-none disabled:cursor-none;
 }
 
 @media screen and (max-width: 860px) {
     .buttons {
-        justify-content: center;
-        gap: 20px;
+        @apply content-center gap-5;
     }
     
 }
