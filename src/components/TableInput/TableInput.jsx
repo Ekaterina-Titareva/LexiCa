@@ -11,7 +11,6 @@ const TableInput = (props) => {
             name={props.name}
             value={props.value}
             onChange={props.handleInputChange}
-            onBlur={props.onBlur}
             placeholder={props.placeholder}
         />
         {props.errors && <div className={styles.error}>{props.errors}</div>}

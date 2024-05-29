@@ -9,7 +9,7 @@
 }
 
 button {
-    @apply mx-2 py-1 px-4 block cursor-pointer text-white text-lg border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20 disabled:bg-slate-500/60 disabled:text-slate-700 disabled:border-none disabled:cursor-none;
+    @apply mx-2 py-1 px-4 w-32 block cursor-pointer text-white text-sm border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20 disabled:bg-slate-500/60 disabled:text-slate-700 disabled:border-none disabled:cursor-none;
 }
 
 @media screen and (max-width: 860px) {

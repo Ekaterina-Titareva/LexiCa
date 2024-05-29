@@ -31,30 +31,35 @@ tr {
 }
 
 td {
-  @apply p-3 w-80;
+  @apply p-3 max-w-80 overflow-hidden;
 }
 
-@media screen and (max-width: 1445px) {
+@media screen and (max-width: 1439px) {
   main {
     @apply mx-3;
   }
+
+  h1, h2 {
+    @apply text-2xl;
+  }
+
   td {
-    @apply p-1;
+    @apply px-1 py-2;
   }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1023px) {
 
   main {
-    @apply mx-12;
+    @apply mx-2;
   }
 
   tr {
-    @apply block border-0;
+    @apply block border-0 hover:bg-black/20;
   }
 
   td {
-    @apply border-2 border-white/30 p-2 flex flex-col items-center;
+    @apply border-2 border-white/30 p-1 flex flex-col items-center;
   }
 }
 

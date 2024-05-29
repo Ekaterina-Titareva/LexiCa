@@ -1,11 +1,6 @@
 import { useState } from 'react';
 import { observer } from "mobx-react";
 import styles from './word.module.css';
-import Fab from '@mui/material/Fab';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import CheckIcon from '@mui/icons-material/Check';
-import CloseIcon from '@mui/icons-material/Close';
 import wordsStore from "../../servises/WordsStore.jsx";
 import TableInput from '../TableInput/TableInput.jsx';
 
@@ -88,11 +83,13 @@ const Word = observer(({ id, tags, english, transcription, russian }) =>  {
                     <td>{english}</td>
                     <td>{transcription}</td>
                     <td>{russian}</td>
-                    <td className={styles.buttons}>
+                    <td>
                         <button className={styles.buttonEdit} 
                             onClick={handleToggle}
                             >Редактировать
                         </button>
+                    </td>
+                    <td>
                         <button className={styles.buttonDelete} 
                             onClick={()=> deleteWord(id)}
                             >Удалить
@@ -135,7 +132,7 @@ const Word = observer(({ id, tags, english, transcription, russian }) =>  {
                         placeholder={"Translation"}
                         errors={errors.russian}
                     />
-                    <td className={styles.buttons}>
+                    <td>
                         <button 
                             className={styles.buttonSave} 
                             type='submit' 
@@ -143,6 +140,8 @@ const Word = observer(({ id, tags, english, transcription, russian }) =>  {
                             disabled={isDisabled}
                         >Сохранить
                         </button>
+                    </td>
+                    <td>
                         <button  
                             className={styles.buttonCancel} 
                             onClick={handleToggle} 

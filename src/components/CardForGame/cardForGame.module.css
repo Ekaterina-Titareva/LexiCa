@@ -11,7 +11,7 @@
     }
 
     .buttonTranslate {
-        @apply w-52 h-10 mx-2 py-1 px-5 block cursor-pointer text-white text-lg border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20 focus:border-white/50 overflow-hidden;
+        @apply w-52 h-10 mx-2 py-1 px-5 block cursor-pointer text-white text-sm border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20 focus:border-white/50 overflow-hidden;
     }
 
     .translation {

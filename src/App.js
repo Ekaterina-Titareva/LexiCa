@@ -1,6 +1,5 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from "./components/Header/Header.jsx"
-import AddNewWord from "./components/AddNewWord/AddNewWord.jsx";
 import ListOfWords from "./pages/ListOfWords/ListOfWords.jsx";
 import CardGame from "./pages/CardGame/CardGame.jsx";
 import Footer from "./components/Footer/Footer.jsx"
@@ -14,10 +13,7 @@ function App() {
       < Header />
       <Routes>
           <Route path='/' element={
-            <main>
-                    < AddNewWord />
-                    < ListOfWords />
-            </main>
+            <main>< ListOfWords /></main>
           }/>
           <Route path='/game' element={
             <main>< CardGame /></main>
