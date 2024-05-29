@@ -1,17 +1,11 @@
-import "./loader.css"
 
 const Loader = () => {
 return (
-    <div className="loaderWrapper">
-        <div className="bubblingG">
-            <span id="bubblingG_1">
-            </span>
-            <span id="bubblingG_2">
-            </span>
-            <span id="bubblingG_3">
-            </span>
-        </div>
-    </div>
+<button type="button" class="bg-indigo-500">
+    <svg class="animate-bounce w-4 h-2" viewBox="0 0 24 24">
+    </svg>
+    Идет загрузка...
+</button>
     )
 }
 export default Loader

@@ -2,9 +2,3 @@
 .swiper {
     @apply flex flex-row items-center content-center m-12;
 }
-
-@media screen and (max-width: 767px) {
-    .swiper {
-        @apply flex flex-col gap-2;
-    }
-}

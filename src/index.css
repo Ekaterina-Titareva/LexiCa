@@ -27,7 +27,7 @@ table {
 }
 
 tr {
-  @apply border-b-2 hover:bg-white/40;
+  @apply border-b-2 hover:bg-white/40 ease-in duration-100;
 }
 
 td {
@@ -55,7 +55,7 @@ td {
   }
 
   tr {
-    @apply block border-0 hover:bg-black/20;
+    @apply block border-0 hover:bg-indigo-600/20;
   }
 
   td {

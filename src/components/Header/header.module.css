@@ -1,5 +1,5 @@
 .header {
-    @apply sticky top-0 h-1/5 flex flex-row justify-around items-end bg-white/30 pt-8 pb-4 text-white z-50;
+    @apply sticky top-0 h-1/5 flex flex-row justify-around items-end bg-white/30 pt-8 pb-4 text-white z-50 backdrop-blur-lg;
 }
 
 .logoI {
@@ -24,7 +24,7 @@ ul {
 
 
 .link {
-    @apply mx-2 py-1 px-5 block w-36 cursor-pointer text-white text-sm border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20;
+    @apply ease-in duration-100 mx-2 py-1 px-5 block w-40 cursor-pointer text-white text-lg border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20;
 }
 
 @media screen and (max-width: 1150px) {
@@ -40,7 +40,14 @@ ul {
 }
 
 @media screen and (max-width: 769px) {
+    .header {
+        @apply h-40 gap-1;
+        }
+
         .logoText {
             @apply text-sm;
+        }
+        .logoI {
+            @apply gap-1;
         }
 }

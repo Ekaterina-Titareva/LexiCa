@@ -1,5 +1,5 @@
 .buttonAdd {
-    @apply mx-2 py-1 px-5 block min-w-56 cursor-pointer text-white text-lg border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20 disabled:bg-slate-500/60 disabled:text-slate-700 disabled:border-none disabled:cursor-none;
+    @apply ease-in duration-100 mx-16 mt-6 py-1 px-5 block min-w-56 cursor-pointer text-white text-lg border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20 disabled:bg-slate-500/60 disabled:text-slate-700 disabled:border-none disabled:cursor-none;
 }
 
 
@@ -7,8 +7,20 @@
     @apply mx-2 text-2xl text-white;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1439px) {
     .label {
         @apply text-xl;
+    }
+    .buttonAdd {
+        @apply mx-10;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .label {
+        @apply text-lg;
+    }
+    .buttonAdd {
+        @apply m-1;
     }
 }
