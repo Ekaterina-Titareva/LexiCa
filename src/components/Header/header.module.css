@@ -37,17 +37,19 @@ ul {
     .header {
         @apply flex-col justify-center items-center gap-4;
         }
+        .link {
+            @apply  text-base w-36;
+        }
 }
 
 @media screen and (max-width: 769px) {
     .header {
-        @apply h-40 gap-1;
+        @apply h-44 gap-3;
         }
-
         .logoText {
             @apply text-sm;
         }
         .logoI {
-            @apply gap-1;
+            @apply gap-2;
         }
 }
