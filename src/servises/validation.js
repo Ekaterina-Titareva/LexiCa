@@ -5,13 +5,13 @@ const validateField = (id, value) => {
         case 'english':
             regex = /^[A-Z]+$/i;
             if (!regex.test(value)) {
-                return "Enter an english word";
+                return "введите английское слово";
             }
             break;
         case 'russian':
             regex = /^[А-ЯЁ]+$/i;
             if (!regex.test(value)) {
-                return "Enter a russian word";
+                return "введите русское слово";
             }
             break;
         default:

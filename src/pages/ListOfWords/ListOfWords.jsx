@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { observer } from "mobx-react";
 import Word from '../../components/Word/Word.jsx';
+import AddNewWord from "../../components/AddNewWord/AddNewWord.jsx";
 import wordsStore from "../../servises/WordsStore.jsx"
 import Loader from '../../components/Loader/Loader.jsx';
 import { fields } from '../../servises/fields.js';
-import TableInput from '../../components/TableInput/TableInput.jsx';
 import validateField from '../../servises/validation.js';
-import styles from "./listOfWords.module.css"
 
 const ListOfWords = observer(() => {
     const { words, loading, error, fetchWords, addedWord} = wordsStore;
@@ -44,7 +43,6 @@ const ListOfWords = observer(() => {
         e.preventDefault();
         if (!hasEmptyValue && !hasErrors) {
             addedWord(inputValues);
-            // Очистка полей формы
             setInputValues(fields.reduce((values, field) => ({ ...values, [field.id]: '' }), {}));
             setTouchedFields({});
             setErrors({});
@@ -56,31 +54,14 @@ const ListOfWords = observer(() => {
         <form onSubmit={handleSubmit}>
         <table>
             <thead>
-                    <tr>
-                        <td>
-                            <p className={styles.label}>Id</p>
-                        </td>
-                        {fields.map((field) => (
-                            <TableInput 
-                            key={field.id}
-                            id={field.id}
-                            type={"text"} 
-                            placeholder={field.placeholder} 
-                            value={inputValues[field.id]} 
-                            handleInputChange={(e) => handleInputChange(e, field.id)}
-                            onBlur={() => setTouchedFields({ ...touchedFields, [field.id]: true })}
-                            errors={errors[field.id]}
-                            label={<p className={styles.label} htmlFor={field.id} title={field.title}>{field.name}</p>}
-                            />
-                        ))}
-                        <td colSpan={2}>
-                            <button
-                                disabled={hasEmptyValue || hasErrors}
-                                type='submit'
-                                className={styles.buttonAdd}
-                            >Добавить слово</button>
-                        </td>
-                    </tr>
+                <AddNewWord 
+                    inputValues={inputValues}
+                    handleInputChange={handleInputChange}
+                    touchedFields={touchedFields}
+                    setTouchedFields={setTouchedFields}
+                    hasEmptyValue={hasEmptyValue}
+                    hasErrors={hasErrors}
+                    errors={errors}/> 
             </thead>
             <tbody>
                 {!!words?.length &&

@@ -1,24 +1,44 @@
 import axios from "axios";
-import post from "../post"
 
-export async function getWordsApi() {
-try {
-    const response = await axios.get('/api/words');
-    return response;
-} catch (error) {
-    console.error("Ошибка при получении слов:", error);
+
+const api = axios.create({
+    baseURL: '/api/words'
+});
+
+// Обработчик ошибок
+const handleError = (error, message) => {
+    console.error(message, error);
     throw error;
 }
+
+export async function getWordsApi() {
+    try {
+        return await api.get('/');
+    } catch (error) {
+        handleError(error, "Ошибка при получении слов:");
+    }
 }
 
 export async function addedWordApi(item) {
-    await post(item, "add", "добавлении");
+    try {
+        return await api.post('/add', item);
+    } catch (error) {
+        handleError(error, "Ошибка при добавлении слова:");
+    }
 }
 
 export async function changedWordApi(item) {
-    await post(item, `${item.id}/update`, "изменении");
+    try {
+        return await api.post(`/${item.id}/update`, item);
+    } catch (error) {
+        handleError(error, "Ошибка при изменении слова:");
+    }
 }
 
-export async function deleteWordApi(item) {
-    await post(item, `${item}/delete`, "удалении");
+export async function deleteWordApi(id) {
+    try {
+        return await api.post(`/${id}/delete`);
+    } catch (error) {
+        handleError(error, "Ошибка при удалении слова:");
+    }
 }

@@ -1,4 +1,4 @@
 
 .swiper {
-    @apply flex flex-row items-center content-center m-12;
+    @apply flex flex-row items-center m-12;
 }

@@ -63,7 +63,6 @@ class WordsStore {
         
         addedWord = async (newWord) => {
         try {
-            console.log(newWord)
         const response = await addedWordApi(newWord);
         runInAction(() => {
         const updatedWords = [...this.words, response.data];
