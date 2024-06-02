@@ -18,9 +18,12 @@ button {
     } 
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1024px) {
     .buttons {
         @apply content-center gap-5;
     }
+    button {
+        @apply w-40;
+    } 
     
 }

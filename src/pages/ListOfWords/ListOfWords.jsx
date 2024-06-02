@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { observer } from "mobx-react";
 import Word from '../../components/Word/Word.jsx';
 import AddNewWord from "../../components/AddNewWord/AddNewWord.jsx";
@@ -18,7 +18,7 @@ const ListOfWords = observer(() => {
     );
     const [touchedFields, setTouchedFields] = useState({});
     const [errors, setErrors] = useState({});
-
+    // Обработчик изменения ввода
     const handleInputChange = (e, id) => {
         const value = e.target.value;
         setInputValues({
@@ -35,19 +35,19 @@ const ListOfWords = observer(() => {
             [id]: errorMessage
         });
     };
-
-    const hasEmptyValue = Object.values(inputValues).some(value => value.trim() === "");
-    const hasErrors = Object.values(errors).some(error => error !== '');
-
-    const handleSubmit = (e) => {
+    // Проверка на наличие ошибок и пустых полей
+    const isDisabled = Object.values(errors).some(error => error) || 
+                        Object.values(inputValues).some(value => value === '');
+    // Обработчик сохранения изменений
+    const handleSubmit = useCallback((e) => {
         e.preventDefault();
-        if (!hasEmptyValue && !hasErrors) {
+        if (!isDisabled) {
             addedWord(inputValues);
             setInputValues(fields.reduce((values, field) => ({ ...values, [field.id]: '' }), {}));
             setTouchedFields({});
             setErrors({});
         }
-    };
+    }, [isDisabled, inputValues, addedWord]);
     if (loading) return <Loader />;
     if (error) return <h2>Проблема с сервером, обратитесь в службу поддержки, пожалуйста</h2>;
     return (
@@ -59,8 +59,7 @@ const ListOfWords = observer(() => {
                     handleInputChange={handleInputChange}
                     touchedFields={touchedFields}
                     setTouchedFields={setTouchedFields}
-                    hasEmptyValue={hasEmptyValue}
-                    hasErrors={hasErrors}
+                    isDisabled={isDisabled}
                     errors={errors}/> 
             </thead>
             <tbody>

@@ -1,23 +1,31 @@
-const validateField = (id, value) => {
+const validateField = (identifier, value) => {
     let regex;
-    switch(id) {
+    let errorMessage;
+
+    const errorMessages = {
+        tags: "введите английское слово",
+        english: "введите английское слово",
+        russian: "введите русское слово"
+    };
+
+    switch(identifier) {
         case 'tags':
         case 'english':
             regex = /^[A-Z]+$/i;
-            if (!regex.test(value)) {
-                return "введите английское слово";
-            }
+            errorMessage = errorMessages.english;
             break;
         case 'russian':
             regex = /^[А-ЯЁ]+$/i;
-            if (!regex.test(value)) {
-                return "введите русское слово";
-            }
+            errorMessage = errorMessages.russian;
             break;
         default:
             return '';
     }
+
+    if (!regex.test(value)) {
+        return errorMessage;
+    }
     return '';
 };
 
-export default validateField
+export default validateField;

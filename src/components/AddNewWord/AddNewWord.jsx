@@ -2,7 +2,7 @@ import TableInput from '../../components/TableInput/TableInput.jsx';
 import { fields } from '../../servises/fields.js';
 import styles from "./addNewWord.module.css";
 
-const AddNewWord = ({ inputValues, handleInputChange, touchedFields, setTouchedFields, hasEmptyValue, hasErrors, errors }) => {
+const AddNewWord = ({ inputValues, handleInputChange, touchedFields, setTouchedFields, isDisabled, errors }) => {
 return (
     <>
     <tr>
@@ -24,7 +24,7 @@ return (
         ))}
         <td colSpan={2}>
         <button
-            disabled={hasEmptyValue || hasErrors}
+            disabled={isDisabled}
             type='submit'
             className={styles.buttonAdd}
         >Добавить слово</button>

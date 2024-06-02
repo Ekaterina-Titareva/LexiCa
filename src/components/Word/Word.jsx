@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { observer } from "mobx-react";
 import styles from './word.module.css';
 import wordsStore from "../../servises/WordsStore.jsx";
 import TableInput from '../TableInput/TableInput.jsx';
+import validateField from '../../servises/validation.js';
 
 const Word = observer(({ id, tags, english, transcription, russian }) =>  {
     const { changedWord, deleteWord } = wordsStore;
@@ -10,70 +11,37 @@ const Word = observer(({ id, tags, english, transcription, russian }) =>  {
     const [errors, setErrors] = useState({});
     const [isVisible, setIsVisible] = useState(true);
 
-    // Функция валидации поля
-    const validateField = (name, value) => {
-        let regex;
-        switch(name) {
-            case 'tags':
-            case 'english':
-                regex = /^[A-Z]+$/i;
-                if (!regex.test(value)) {
-                    return "Enter an english word";
-                }
-                break;
-            case 'russian':
-                regex = /^[А-ЯЁ]+$/i;
-                if (!regex.test(value)) {
-                    return "Enter a russian word";
-                }
-                break;
-            default:
-                return '';
-        }
-        return '';
-    };
-
     // Обработчик изменения ввода
-    const handleInputChange = (e) => {
+    const handleInputChange = useCallback((e) => {
         const { name, value } = e.target;
         setEditValues(prevValues => ({
             ...prevValues,
             [name]: value
         }));
+        const error = validateField(name, value);
         setErrors(prevErrors => ({
             ...prevErrors,
-            [name]: validateField(name, value)
+            [name]: error
         }));
-    };
+    }, []);
 
     // Обработчик сохранения изменений
-    const handleSave = (e) => {
+    const handleSave = useCallback((e) => {
         e.preventDefault();
-        // Проверка на наличие ошибок перед сохранением
-        const formErrors = Object.keys(editValues).reduce((acc, key) => {
-            const error = validateField(key, editValues[key]);
-            if (error) {
-                acc[key] = error;
-            }
-            return acc;
-        }, {});
-
-        if (Object.keys(formErrors).length === 0) {
-            changedWord(editValues)
+        if (!Object.values(errors).some(error => error)) {
+            changedWord(editValues);
             setIsVisible(true);
-        } else {
-            setErrors(formErrors);
         }
-    };
+    }, [errors, editValues, changedWord]);
 
-    const handleToggle = () => {
-        setIsVisible((prev) => (!prev));
-    };
-
+    const handleToggle = useCallback(() => {
+        setIsVisible(prev => !prev);
+    }, []);
+    
     // Проверка на наличие ошибок и пустых полей
     const isDisabled = Object.values(errors).some(error => error) || 
                         Object.values(editValues).some(value => value === '');
-
+                        
     return (
         <>
             { isVisible ? (

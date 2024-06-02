@@ -48,7 +48,7 @@ td {
   }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
 
   main {
     @apply mx-2;
