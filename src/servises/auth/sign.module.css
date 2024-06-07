@@ -1,0 +1,70 @@
+.uiForm {
+    max-width: 350px;
+    padding: 80px 30px 30px;
+    margin: 50px auto 30px;
+    background: white;
+}
+.uiForm h2 {
+    @apply text-indigo-600;
+    position: relative;
+    z-index: 5;
+    margin: 0 0 60px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.formRow {
+    position: relative;
+    margin-bottom: 50px;
+}
+.formRow input {
+    display: block;
+    width: 100%;
+    padding: 0 10px;
+    line-height: 40px;
+    font-family: 'Roboto', sans-serif;
+    background: none;
+    border-width: 0;
+    border-bottom: 2px solid #4a90e2;
+    transition: all 0.2s ease;
+}
+.formRow label {
+    position: absolute;
+    left: 13px;
+    color: #9d959d;
+    font-size: 20px;
+    font-weight: 300;
+    transform: translateY(-35px);
+    transition: all 0.2s ease;
+}
+.formRow input:focus {
+    outline: 0;
+    border-color: #F77A52;
+}
+.formRow input:focus+label, .formRow input:valid+label {
+    transform: translateY(-60px);
+    margin-left: -14px;
+    font-size: 14px;
+    font-weight: 400;
+    outline: 0;
+    border-color: #F77A52;
+    color: #F77A52;
+}
+.uiForm input[type="submit"] {
+    width: 100%;
+    padding: 0;
+    line-height: 42px;
+    background: #4a90e2;
+    border-width: 0;
+    color: white;
+    font-size: 20px;
+}
+.uiForm p {
+    margin: 0;
+    padding-top: 10px;
+}
+
+.formLink {
+        @apply ease-in duration-100 mx-2 py-1 block w-52 cursor-pointer text-white text-lg border-2 rounded-2xl border-indigo-600 bg-indigo-600/50 hover:bg-indigo-600/80 active:bg-white/20;
+}

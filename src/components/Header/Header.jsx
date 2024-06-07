@@ -18,6 +18,8 @@ return (
         <ul>
             <li><Link className={styles.link} to={'/'}>Список слов</Link></li>
             <li><Link className={styles.link} to={'/game'}>Тренировка</Link></li>
+            <li><Link className={styles.link} to={'/signup'}>Регистрация</Link></li>
+            <li><Link className={styles.link} to={'/signin'}>Войти</Link></li>
         </ul>
     </nav>
     </header>
