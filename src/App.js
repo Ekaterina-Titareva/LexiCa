@@ -6,7 +6,6 @@ import Footer from "./components/Footer/Footer.jsx"
 import Error404 from './pages/Error404/Error404.jsx';
 import SignUp from './servises/auth/SignUp.jsx';
 import SignIn from './servises/auth/SignIn.jsx';
-import AuthDetails from './servises/auth/AuthDetails.jsx';
 
 
 
@@ -30,7 +29,6 @@ function App() {
           <Route path='/signin' element={
             <main>
               < SignIn />
-              < AuthDetails />
             </main>}
           />
         </Routes>

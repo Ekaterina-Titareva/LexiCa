@@ -44,7 +44,7 @@ ul {
 
 @media screen and (max-width: 769px) {
     .header {
-        @apply h-44 gap-3;
+        @apply h-72 gap-3;
         }
         .logoText {
             @apply text-sm;

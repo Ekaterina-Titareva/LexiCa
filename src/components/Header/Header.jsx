@@ -1,6 +1,7 @@
 import styles from './header.module.css'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/icons/logo.svg'
+import AuthDetails from '../../servises/auth/AuthDetails';
 
 function Header() {
 return (
@@ -18,10 +19,10 @@ return (
         <ul>
             <li><Link className={styles.link} to={'/'}>Список слов</Link></li>
             <li><Link className={styles.link} to={'/game'}>Тренировка</Link></li>
-            <li><Link className={styles.link} to={'/signup'}>Регистрация</Link></li>
-            <li><Link className={styles.link} to={'/signin'}>Войти</Link></li>
+            
         </ul>
     </nav>
+    < AuthDetails />
     </header>
 )
 }

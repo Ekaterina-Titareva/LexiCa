@@ -1,28 +1,35 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './sign.module.css';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
 
 const SignUp = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [copyPassword, setCopyPassword] = useState("");
-    const [error, setError] = useState("");
-    function register (e) {
-        e.preventDefault()
-        if (copyPassword !== password) {
-            setError("Пароли не совпадают");
-            return
-        } createUserWithEmailAndPassword(auth, email, password)
-            .then((user) => {
-                console.log(user);
-                setEmail("");
-                setPassword("")
-                setCopyPassword("");
-                setError("");
-            })
-            .catch((error) => console.log(error));
-        }
+const navigate = useNavigate();
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+const [copyPassword, setCopyPassword] = useState("");
+const [error, setError] = useState("");
+
+function register(e) {
+e.preventDefault();
+
+if (copyPassword !== password) {
+setError("Пароли не совпадают");
+return;
+}
+
+createUserWithEmailAndPassword(auth, email, password)
+.then((user) => {
+alert(`Регистрация прошла успешно, Вы вошли в аккаунт ${user.user.email}`);
+setEmail("");
+setPassword("");
+setCopyPassword("");
+setError("");
+navigate('/');
+})
+.catch((error) => console.log(error));
+}
     return (
         <div>
             <form 
@@ -59,7 +66,7 @@ const SignUp = () => {
                 required 
                 autoComplete="off"/>
             </div>
-            <button className={styles.formLink} type="submit">Зарегистрироваться</button>
+            <button className={styles.formButton} type="submit">Зарегистрироваться</button>
             {error ? <p>{error}</p> : ""}
             </form>
         </div>

@@ -2,8 +2,11 @@ import { useState } from 'react';
 import styles from './sign.module.css';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -15,6 +18,7 @@ const SignIn = () => {
                 setEmail("");
                 setPassword("")
                 setError("");
+                navigate('/');
             })
             .catch((error) => {
                 console.log(error)
@@ -48,11 +52,12 @@ const SignIn = () => {
             </div>
             <button 
                 onClick={login}
-                className={styles.formLink} 
+                className={styles.formButton} 
                 type="submit">
                     Войти
             </button>
             {error ? <p>{error}</p> : ""}
+            <Link className={styles.formLink} to={'/signup'}>Зарегистрироваться</Link>
             </form>
         </div>
     )

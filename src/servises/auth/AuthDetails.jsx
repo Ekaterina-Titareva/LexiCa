@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './sign.module.css';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../../firebase';
+import { Link } from 'react-router-dom'
 
 const AuthDetails = () => {
     const [authUser, setAuthUser] = useState(null);
@@ -13,7 +14,7 @@ const AuthDetails = () => {
             setAuthUser(null)
         }
     });
-    return listen();
+    return () => listen();
 }, []);
 function userSignOut() {
     signOut(auth)
@@ -23,14 +24,16 @@ function userSignOut() {
 
 
     return (
-        <div>
+        <div className={styles.authWrapper}>
             {authUser ? (
-                <div>
-                <p>Вы зашли в аккаунт ${authUser.email}</p>
-                <button onClick={userSignOut} className={styles.formLink}>Выйти</button>
-            </div>
-            ) : (<p>Вы вышли из аккаунта</p>)}
-</div>
+                <>
+                <p>Вы зашли в аккаунт {authUser.email}</p>
+                    <button onClick={userSignOut} className={styles.formButton}>Выйти</button>
+                </>
+            ) : (
+            <Link className={styles.formButton} to={'/signin'}>Войти</Link>
+            )}
+        </div>
     )
 }
 
