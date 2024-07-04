@@ -1,7 +1,8 @@
 import axios from "axios";
 
+
 const api = axios.create({
-    baseURL: '/api/words'
+    baseURL: process.env.NODE_ENV === 'production' ? 'https://itgirlschool.justmakeit.ru/api/words' : '/api/words'
 });
 
 // Обработчик ошибок
